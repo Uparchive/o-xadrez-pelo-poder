@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 5</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo5" -->
+    <div class="container capitulo" id="capitulo5">
+        <h1 class="chapter-number">Capítulo 5</h1>
+        <h2 class="chapter-title">Jogadas Arriscadas</h2>
+        <p>O dia seguinte amanheceu com a repercussão do pronunciamento presidencial. Manchetes em todos os portais de notícias destacavam a ameaça à democracia, enquanto figuras políticas e jornalistas debatiam em programas matinais. Para muitos, o discurso parecia um grito de resistência; para outros, uma admissão de fraqueza.</p>
+        <p>Enquanto isso, Júlia e Lucas se encontravam em um café discreto para planejar os próximos passos. "Precisamos de uma estratégia que minimize os riscos", disse Lucas, observando o fluxo constante de pedestres do lado de fora. "Essa evidência é poderosa, mas se for revelada sem preparo, será facilmente desacreditada."</p>
+        <p>No Palácio das Decisões, o presidente convocou uma reunião com sua equipe de segurança e inteligência. "Quero uma lista completa de suspeitos e aliados que possam estar envolvidos nisso", ordenou. "Precisamos saber quem são os jogadores antes de fazer o próximo movimento."</p>
+        <p>Do lado conspiratório, o grupo avançava com sua estratégia. "O pronunciamento foi um erro para eles", afirmou o líder. "Agora, o país está dividido. Vamos usar isso a nosso favor." Eles planejavam ações coordenadas que aumentariam a instabilidade e dificultariam qualquer resposta do governo.</p>
+        <p>Nas redes sociais, vídeos e textos manipulados começaram a circular, distorcendo o discurso presidencial. Hashtags organizadas por bots e perfis falsos espalhavam desinformação em uma velocidade alarmante. Júlia notou o padrão enquanto analisava os posts. "Eles estão usando uma estratégia coordenada de manipulação", explicou para Lucas. "Isso vai ser difícil de combater."</p>
+        <p>Em meio ao caos, uma nova figura entrou em cena. Um delator anônimo, identificado apenas como "Corvo", enviou uma mensagem criptografada para Júlia. "Eu sei o que eles estão planejando. Precisamos nos encontrar. Traga seu dossiê." Júlia hesitou, mas sabia que precisava aproveitar qualquer vantagem que pudesse obter.</p>
+        <p>As jogadas arriscadas continuavam no tabuleiro. Cada movimento parecia trazer tanto oportunidade quanto perigo. A questão era: quem estaria disposto a sacrificar mais para vencer?</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo4.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('continua.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

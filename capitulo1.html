@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo1" -->
+    <div class="container capitulo" id="capitulo1">
+        <h1 class="chapter-number">Capítulo 1</h1>
+        <h2 class="chapter-title">O Tabuleiro é Montado</h2>
+        <p>Era uma manhã cinzenta na capital, e as ruas pareciam refletir a tensão crescente entre dois mundos. De um lado, uma liderança política acusada de centralizar o poder; do outro, vozes clamando por liberdade e justiça.</p>
+        <p>No Palácio das Decisões, um homem de semblante cansado observava o movimento intenso do lado de fora. O presidente, alvo de elogios e críticas, sabia que aquele seria um dia decisivo para o futuro do país. Ao mesmo tempo, em uma sala discreta de um prédio abandonado, um grupo conspirava em silêncio, traçando estratégias que poderiam mudar o destino de milhões.</p>
+        <p>"Cada peça tem seu lugar no tabuleiro", murmurou o líder do grupo, olhando para um mapa estendido na mesa. "Mas lembrem-se, um movimento errado, e estaremos perdidos."</p>
+        <p>Enquanto isso, nas redes sociais, a polarização entre esquerda e direita atingia níveis jamais vistos. Fake news, discursos inflamados e teorias conspiratórias moldavam a percepção pública, dificultando a distinção entre verdade e manipulação.</p>
+        <p>Do outro lado da cidade, Júlia, uma jornalista independente, lia atentamente um dossiê que poderia ser a chave para desvendar o esquema por trás dos bastidores do poder. Com seus recursos limitados e a desconfiança crescente em quem confiar, ela sabia que a informação que possuía era perigosa.</p>
+        <p>Assim começava o jogo. Cada peça estava posicionada. Mas quem faria o primeiro movimento?</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo0.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo2.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

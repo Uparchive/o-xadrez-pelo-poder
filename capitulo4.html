@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 4</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo4" -->
+    <div class="container capitulo" id="capitulo4">
+        <h1 class="chapter-number">Capítulo 4</h1>
+        <h2 class="chapter-title">As Primeiras Jogadas</h2>
+        <p>O relógio marcava 22h quando as primeiras ações começaram. No Palácio das Decisões, o presidente se preparava para um pronunciamento inesperado à nação. Ele sabia que precisava agir antes que as informações se espalhassem e perdesse o controle da narrativa.</p>
+        <p>Júlia e seu contato, Lucas, um ex-analista de inteligência, trabalharam incansavelmente para decifrar o dossiê. "Isso é maior do que eu imaginava", disse ele, apontando para uma conexão direta entre um grande empresário e o financiamento do grupo conspiratório. "Se conseguirmos provar isso, será devastador."</p>
+        <p>Em outro ponto da cidade, o líder conspirador recebia uma ligação enigmática. "O jogo começou", disse a voz do outro lado da linha. "Estamos prontos para avançar. Certifique-se de que todos saibam o que fazer."</p>
+        <p>Enquanto isso, as redes sociais fervilhavam com teorias sobre o pronunciamento presidencial. Hashtags polarizavam ainda mais o debate, enquanto bots automatizados espalhavam desinformação. A confusão era o principal aliado do grupo conspiratório.</p>
+        <p>Às 22h30, o presidente subiu ao púlpito, com o rosto sério e as palavras escolhidas com cuidado. "Estamos enfrentando uma ameaça séria à nossa democracia. Mas quero deixar claro: não seremos intimidados." Suas palavras repercutiram imediatamente, acendendo faíscas de esperança em alguns e de revolta em outros.</p>
+        <p>Enquanto isso, Júlia e Lucas encontraram uma pista crucial. Entre os documentos do dossiê, havia um contrato assinado digitalmente que conectava o grupo conspiratório a um importante parlamentar. "Isso é nossa chave", disse Júlia, com um misto de medo e determinação. "Agora precisamos decidir como usá-la."</p>
+        <p>O tabuleiro estava em movimento, e as primeiras jogadas haviam sido feitas. Mas cada passo adiante aumentava o risco de exposição e fracasso. O jogo estava apenas começando, e o xeque-mate parecia mais próximo do que nunca.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo3.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo5.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

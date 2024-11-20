@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo3" -->
+    <div class="container capitulo" id="capitulo3">
+        <h1 class="chapter-number">Capítulo 3</h1>
+        <h2 class="chapter-title">Linhas de Batalha</h2>
+        <p>O amanhecer trouxe consigo um clima de tensão. Nos corredores do Palácio das Decisões, conselheiros e ministros debatiam em vozes sussurradas. O presidente, de semblante carregado, recebeu um relatório contendo informações alarmantes sobre movimentações suspeitas na capital.</p>
+        <p>Do outro lado da cidade, Júlia encontrou-se com seu contato, um ex-analista de inteligência que havia deixado o serviço público por razões éticas. "Você tem ideia do que isso significa?", perguntou ele, folheando o dossiê. "Se isso for verdadeiro, estamos à beira de algo muito perigoso."</p>
+        <p>Em um prédio abandonado, o grupo conspiratório ajustava seus planos. "Tudo depende de mantermos o fator surpresa", disse o líder. "Temos as peças no lugar, mas precisamos agir antes que eles percebam."</p>
+        <p>Nas redes sociais, hashtags de apoio e oposição explodiam em número. Fake news surgiam a cada instante, e linhas de batalha ideológicas eram traçadas em postagens e comentários. Era evidente que as pessoas estavam sendo manipuladas, mas por quem exatamente ainda era um mistério.</p>
+        <p>Enquanto isso, Júlia e seu contato começaram a elaborar um plano para expor as informações do dossiê sem atrair suspeitas. "Se publicarmos isso diretamente, seremos caçados", disse ela. "Precisamos ser inteligentes."</p>
+        <p>No tabuleiro político, as peças estavam em movimento. O jogo de xadrez entre poder, corrupção e verdade estava apenas começando, e o risco de um xeque-mate fatal aumentava a cada passo.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo2.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo4.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+// NOTA IMPORTANTE!!
+Para todo novo livro, é necessário mudar o localStorage para que os capítulos
+sejam salvos ao leitor fechar um capitulo. Para quando ele voltar a ler o livro,
+voltar do capítulo exato que ele parou de ler.
+
+Serão necessárias mudanças nos arquivos:
+
+script.js --> indice.html --> index.html --> base-de-capitulos.html se vc mudar o capitulo1.html basta copiar e colar
+o conteúdo no capitulo2.html e assim sucessivamente para cada novo capitulo.
+
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> MAPA DE MUDANÇAS PARA RECONHECIMENTO DE PÁGINAS <<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+Este guia ajuda a configurar o sistema de reconhecimento de páginas para cada livro de maneira única, garantindo que o 
+progresso de leitura seja salvo corretamente no `localStorage` sem interferências entre livros diferentes.
+
+1º Passo: script.js
+- Arquivo: `script.js`
+- Linha: 6
+
+  Você encontrará algo como:
+  ```javascript
+  const currentBook = document.body.dataset.bookId || "MudeAqui"; // Exemplo: 'NomeDoSeuLivro'
+  ```
+  
+  Modificação:
+  - Substitua "MudeAqui" pelo identificador exclusivo deste livro. Pode ser o nome do livro ou um número único.
+
+  Exemplo:
+  ```javascript
+  const currentBook = document.body.dataset.bookId || "NomeDoSeuLivro";
+  ```
+
+2º Passo: indice.html
+- Arquivo: `indice.html`
+- Linha: 13 e linha 49
+
+  Você encontrará algo como:
+  ```javascript
+  const currentBook = document.body.dataset.bookId || "MudeAqui"; // Exemplo: 'NomeDoSeuLivro'
+  ```
+
+  Modificação:
+  - Substitua "MudeAqui" pelo identificador exclusivo deste livro. Pode ser o nome do livro ou um número único.
+
+  Exemplo:
+  ```javascript
+  const currentBook = document.body.dataset.bookId || "NomeDoSeuLivro";
+  ```
+
+3º Passo: index.html
+- Arquivo: `index.html`
+- Linha: 11
+
+  Você encontrará algo como:
+  ```javascript
+  const currentBook = document.body.dataset.bookId || "MudeAqui"; // Exemplo: 'NomeDoSeuLivro'
+  ```
+
+  Modificação:
+  - Substitua "MudeAqui" pelo identificador exclusivo deste livro. Pode ser o nome do livro ou um número único.
+
+  Exemplo:
+  ```javascript
+  const currentBook = document.body.dataset.bookId || "NomeDoSeuLivro";
+  ```
+
+- Linha: 41
+
+  Você encontrará algo como:
+  ```html
+  <body data-book-id="NomeDoSeuLivro">
+  ```
+
+  Modificação:
+  - Substitua "NomeDoSeuLivro" pelo identificador exclusivo deste livro. Pode ser o nome do livro ou um número único.
+
+  Exemplo:
+  ```html
+  <body data-book-id="NomeDoSeuLivro">
+  ```
+
+4º Passo: capitulos.html
+- Arquivo: `capitulos.html`
+- Linha: 13
+
+  Você encontrará algo como:
+  ```javascript
+  const currentBook = document.body.dataset.bookId || "MudeAqui"; // Exemplo: 'NomeDoSeuLivro'
+  ```
+
+  Modificação:
+  - Substitua "MudeAqui" pelo identificador exclusivo deste livro. Pode ser o nome do livro ou um número único.
+
+  Exemplo:
+  ```javascript
+  const currentBook = document.body.dataset.bookId || "NomeDoSeuLivro";
+  ```
+
+- Linha: 46
+
+  Você encontrará algo como:
+  ```html
+  <body data-book-id="NomeDoSeuLivro">
+  ```
+
+  Modificação:
+  - Substitua "NomeDoSeuLivro" pelo identificador exclusivo deste livro. Pode ser o nome do livro ou um número único.
+
+  Exemplo:
+  ```html
+  <body data-book-id="NomeDoSeuLivro">
+  ```
+
+Após estas modificações, seu sistema de reconhecimento de páginas estará pronto!
+

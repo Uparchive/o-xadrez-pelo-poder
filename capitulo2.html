@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo2" -->
+    <div class="container capitulo" id="capitulo2">
+        <h1 class="chapter-number">Capítulo 2</h1>
+        <h2 class="chapter-title">Movimentos Ocultos</h2>
+        <p>A noite caiu sobre a cidade, trazendo consigo um silêncio inquietante. No Palácio das Decisões, luzes permaneciam acesas enquanto reuniões emergenciais eram realizadas. O presidente sabia que o país estava à beira de algo grande, mas a dimensão do perigo ainda era incerta.</p>
+        <p>No prédio abandonado, o líder do grupo conspiratório observava cada detalhe dos preparativos. "Não podemos falhar", disse ele, com uma calma que escondia sua determinação. "Se perdermos essa chance, o tabuleiro será virado contra nós."</p>
+        <p>Enquanto isso, Júlia investigava mais a fundo o dossiê que havia recebido. As informações ali contidas eram explosivas: nomes de figuras influentes, transferências financeiras suspeitas e planos que indicavam uma possível tentativa de golpe. Mas a quem ela poderia confiar essas informações sem colocar sua vida em risco?</p>
+        <p>Do outro lado do espectro, a internet fervilhava. Perfis anônimos espalhavam rumores e desinformação, confundindo ainda mais o público. A polarização atingia picos alarmantes, dividindo famílias, amigos e até mesmo instituições.</p>
+        <p>Em uma sala discreta de um jornal local, Júlia fez uma ligação. "Preciso de sua ajuda", disse ela para um antigo contato. "O que eu tenho em mãos pode mudar tudo, mas não consigo fazer isso sozinha."</p>
+        <p>Os movimentos ocultos no tabuleiro estavam sendo realizados, mas o jogo ainda estava longe de ser decidido. Cada lado calculava suas estratégias, enquanto a tensão subia como uma tempestade prestes a explodir.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo1.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo3.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

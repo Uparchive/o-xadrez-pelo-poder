@@ -1,0 +1,183 @@
+/* Configurações Globais */
+body {
+    font-family: 'Georgia', serif;
+    color: #444;
+    background: #f2f2f2;
+    line-height: 1.6em;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; /* Todos os elementos herdam box-sizing do body */
+}
+
+/* Container Principal */
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    overflow-x: hidden; /* Garante que nada "fuja" da tela horizontalmente */
+    text-align: center; /* Centraliza o conteúdo dentro do container */
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do Cabeçalho */
+h1 {
+    font-size: 2.4em;
+    color: #2a4d69;
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    word-wrap: break-word; /* Quebra automaticamente palavras longas */
+    line-height: 1.4em;
+    font-weight: 700;
+    text-align: center; /* Centraliza o título */
+}
+
+/* Estilo dos Subtítulos */
+h2 {
+    font-size: 1.8em;
+    color: #444;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    line-height: 1.4em;
+    text-align: center; /* Centraliza o subtítulo */
+}
+
+/* Estilo dos Parágrafos */
+p {
+    font-size: 1.2em;
+    line-height: 1.8em;
+    margin: 1.5em 0;
+    color: #555;
+    text-indent: 1.5em; /* Identação mais suave */
+    word-wrap: break-word; /* Evita que palavras longas ultrapassem os limites da tela */
+    overflow-wrap: break-word; /* Quebra de palavras em dispositivos menores */
+    text-align: justify; /* Justifica o texto para melhor organização */
+}
+
+/* Estilo dos Botões */
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5em;
+    gap: 20px; /* Maior espaço entre os botões para organização */
+    flex-wrap: wrap; /* Garante que os botões sejam realinhados se não houver espaço suficiente */
+}
+
+.buttons button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: white;
+    background: #2a4d69;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra leve para destacar os botões */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.buttons button.previous {
+    clip-path: polygon(20% 0%, 100% 0%, 80% 50%, 100% 100%, 20% 100%, 0% 50%);
+    padding-left: 40px;
+}
+
+.buttons button.next {
+    clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 80% 100%, 0% 100%, 20% 50%);
+    padding-right: 40px;
+}
+
+.buttons button.index {
+    border-radius: 25px;
+    padding: 15px 20px;
+}
+
+.buttons button:hover {
+    background: #355c7d;
+    transform: translateY(-3px); /* Efeito sutil ao passar o mouse */
+}
+
+.buttons button:active {
+    background: #1e3b57; /* Cor mais escura ao clicar no botão */
+}
+
+/* Estilos Para Imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+    margin-bottom: 1.5em;
+}
+
+/* Estilo do Número e Título do Capítulo */
+.chapter-number {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin: 0.5em 0;
+    color: #2a4d69;
+    text-align: center; /* Centraliza o número do capítulo */
+}
+
+.chapter-title {
+    font-size: 1.6em;
+    font-weight: normal;
+    margin: 0.5em 0;
+    color: #5d5d5d;
+    text-align: center; /* Centraliza o título do capítulo */
+}
+
+/* Adiciona uma sombra aos capítulos destacados */
+.chapter-list li.highlight {
+    background-color: #dff0d8; /* Verde sutil para destacar */
+    border-color: #a5d6a7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 8px; /* Adiciona bordas arredondadas */
+}
+
+/* Hover Effect para itens da lista de capítulos */
+.chapter-list li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para Tornar o Design Responsivo */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Reduz o tamanho da fonte do título em telas menores */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Reduz o tamanho do subtítulo */
+    }
+
+    .container {
+        padding: 1em; /* Reduz o padding em telas menores */
+    }
+
+    p {
+        font-size: 1.1em; /* Fonte um pouco menor para telas menores */
+        text-indent: 1em; /* Ajuste na indentação para telas menores */
+    }
+
+    .buttons button {
+        font-size: 1em; /* Reduz o tamanho da fonte dos botões em telas menores */
+        max-width: 100%; /* Ajusta o botão para ocupar toda a largura disponível em telas menores */
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 80%;
+        padding: 30px;
+    }
+}

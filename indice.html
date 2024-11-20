@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice dos Capítulos</title>
+    <link rel="stylesheet" href="indicestyle.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Identifique o livro atual (por exemplo, usando um atributo data no body)
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder"; // Exemplo: 'NomeDoSeuLivro'
+
+            // Função para obter o nome do armazenamento local com base no livro
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            // Recupera o último capítulo lido do localStorage
+            const lastReadChapter = localStorage.getItem(getStorageKey());
+            console.log("Último capítulo lido recuperado do localStorage:", lastReadChapter); // Log para debug
+
+            // Se houver um capítulo salvo no localStorage
+            if (lastReadChapter) {
+                // Remover destaque de todos os capítulos
+                document.querySelectorAll('.chapter-list li').forEach(chapter => {
+                    chapter.classList.remove('highlight');
+                });
+
+                // Adicionar destaque ao capítulo salvo
+                const lastChapterElement = document.getElementById(lastReadChapter);
+                if (lastChapterElement) {
+                    lastChapterElement.classList.add('highlight');
+                    console.log("Capítulo destacado:", lastReadChapter); // Log para debug
+                }
+            }
+        });
+
+        // Função para salvar o capítulo atual no localStorage ao clicar
+        function setLastRead(chapterId) {
+            const currentBook = document.body.dataset.bookId || "defaultBook"; // Exemplo: 'diariodeomega'
+            const storageKey = `${currentBook}_lastReadChapter`;
+            localStorage.setItem(storageKey, chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <div class="container">
+        <h1>Índice dos Capítulos</h1>
+        <ul class="chapter-list">
+            <li id="capitulo0"><a href="capitulo0.html" onclick="setLastRead('capitulo0')">Sobre o Livro</a></li>
+            <li id="capitulo1"><a href="capitulo1.html" onclick="setLastRead('capitulo1')">Capítulo 1: O Tabuleiro é Montado</a></li>
+            <li id="capitulo2"><a href="capitulo2.html" onclick="setLastRead('capitulo2')">Capítulo 2: Movimentos Ocultos</a></li>
+            <li id="capitulo3"><a href="capitulo3.html" onclick="setLastRead('capitulo3')">Capítulo 3: Linhas de Batalha</a></li>
+            <li id="capitulo4"><a href="capitulo4.html" onclick="setLastRead('capitulo4')">Capítulo 4: As Primeiras Jogadas</a></li>
+            <li id="capitulo5"><a href="capitulo5.html" onclick="setLastRead('capitulo5')">Capítulo 5: Jogadas Arriscadas</a></li>            
+        </ul>        
+        <a href="index.html" class="back-button">Voltar à Capa</a>
+    </div>
+</body>
+</html>

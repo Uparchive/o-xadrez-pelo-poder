@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 0 - Sobre o Livro</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo0" -->
+    <div class="container capitulo" id="capitulo0">
+        <img src="OXPP-poster.png" alt="Capa do livro O Xadrez Pelo Poder" class="book-cover">
+        <h1 class="chapter-number">Introdução</h1>
+        <h2 class="chapter-title">Sobre o Livro</h2>
+        <p><strong>Bem-vindo(a)!</strong></p>
+        <p>O livro <strong>"O Xadrez Pelo Poder"</strong> é uma emocionante ficção inspirada em eventos reais, onde o poder político e as escolhas humanas são colocados em xeque. Cada capítulo é um movimento em um jogo estratégico, onde não há espaço para erros.</p>
+        <p>Este é um thriller político que mergulha em conspirações, sacrifícios e a busca pela verdade em um mundo dividido. O enredo destaca personagens fictícios em uma trama cheia de intrigas, mostrando os bastidores de uma luta mortal pela democracia.</p>
+        <p><strong>Nota ao Leitor:</strong> Este livro não é uma narrativa histórica, mas uma obra de ficção. Embora inspirado por eventos reais, os personagens, locais e situações são frutos da imaginação do autor. Qualquer semelhança com pessoas ou acontecimentos reais é mera coincidência.</p>
+        <p>Prepare-se para explorar os bastidores do poder e desvendar os segredos mais sombrios por trás de cada jogada neste perigoso tabuleiro.</p>
+        <p>Boa leitura!</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('index.html')">Capa</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo1.html')">Iniciar</button>
+        </div>
+    </div>
+</body>
+</html>
