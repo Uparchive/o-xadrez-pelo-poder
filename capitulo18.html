@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 18</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo18" -->
+    <div class="container capitulo" id="capitulo18">
+        <h1 class="chapter-number">Capítulo 18</h1>
+        <h2 class="chapter-title">A Batalha Digital</h2>
+        <p>O caos nas redes sociais atingiu novos níveis. Acusações, desinformação e debates fervorosos dominavam todas as plataformas. Júlia e sua equipe estavam no centro da tempestade, trabalhando incansavelmente para combater as mentiras disseminadas pelo grupo conspiratório.</p>
+        <p>"Eles estão usando bots e influenciadores pagos para espalhar essas mentiras", explicou Lucas, enquanto mostrava os padrões de comportamento online. "Precisamos ser mais rápidos e mais claros do que nunca."</p>
+        <p>Do outro lado, o líder do grupo conspiratório monitorava a situação. "A confusão está funcionando a nosso favor", afirmou. "Eles não conseguem focar em um único problema, e isso nos dá tempo."</p>
+        <p>Rafael trouxe novos dados que revelavam conexões financeiras entre o grupo conspiratório e grandes empresas de tecnologia. "Se expusermos isso, podemos desestabilizá-los", sugeriu ele. Júlia concordou, mas sabia que precisavam de mais provas para tornar a revelação inquestionável.</p>
+        <p>Enquanto isso, no Palácio das Decisões, o presidente tentava equilibrar a pressão de sua equipe com a necessidade de manter a calma pública. "Se tomarmos medidas contra essas empresas sem provas sólidas, seremos acusados de censura", alertou o ministro das Comunicações.</p>
+        <p>Júlia e Pedro decidiram lançar uma campanha digital massiva, usando influenciadores confiáveis e jornalistas independentes para amplificar a mensagem de #UnidosPelaVerdade. A resposta foi imediata, e milhões de pessoas começaram a compartilhar as informações verificadas pela equipe.</p>
+        <p>Entretanto, o grupo conspiratório reagiu com uma ofensiva ainda maior, publicando documentos falsificados que alegavam envolvimento da equipe de Júlia em esquemas ilegais. Lucas, mais uma vez, agiu rapidamente, expondo as inconsistências nos documentos e desacreditando as acusações.</p>
+        <p>À medida que o dia avançava, a batalha digital parecia equilibrada, mas Júlia sabia que precisavam de um golpe final para virar o jogo. "Estamos fazendo progressos, mas ainda não é suficiente", disse ela. "Precisamos de algo que destrua completamente a credibilidade deles."</p>
+        <p>A batalha pela verdade continuava, e cada movimento estratégico no tabuleiro digital tinha o poder de decidir o futuro do país.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo17.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo19.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

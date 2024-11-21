@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 9</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo9" -->
+    <div class="container capitulo" id="capitulo9">
+        <h1 class="chapter-number">Capítulo 9</h1>
+        <h2 class="chapter-title">O Relógio Contra Todos</h2>
+        <p>A noite era tensa. Júlia, Lucas e Pedro estavam em uma sala escura, iluminada apenas pelo brilho de telas de computador. "Tudo está pronto", disse Pedro, finalizando o upload dos documentos para uma rede de jornalistas internacionais. "Assim que ativarmos isso, não haverá como voltar."</p>
+        <p>No Palácio das Decisões, o presidente reunia seus assessores de confiança. "Estamos sendo atacados de todos os lados", disse ele, com um olhar cansado. "Mas não podemos permitir que a verdade seja enterrada por esse caos." A equipe traçava estratégias para desmentir as notícias falsas que circulavam freneticamente.</p>
+        <p>No lado conspiratório, o líder monitorava as operações de sua equipe. "Eles estão começando a reagir", disse um subordinado. "Mas não têm os recursos para nos deter agora." O plano estava em andamento, e cada minuto que passava levava o grupo mais perto de seu objetivo.</p>
+        <p>Às 23h45, Pedro apertou o botão de envio. "Agora é oficial", disse ele, olhando para Júlia e Lucas. "Os documentos estão na nuvem e acessíveis para jornalistas de todo o mundo."</p>
+        <p>Enquanto isso, nas redes sociais, os debates se intensificavam. Comentários inflamados e hashtags rivais tomavam conta das plataformas, enquanto bots tentavam desviar a atenção da publicação explosiva. Júlia sabia que eles precisariam de uma maneira de alcançar o público diretamente.</p>
+        <p>No subsolo do prédio conspiratório, o membro hesitante finalmente tomou uma decisão. Ele escapou discretamente, levando consigo um telefone criptografado. Sua lealdade havia mudado, e ele sabia que tinha informações que poderiam virar o jogo.</p>
+        <p>À meia-noite, as primeiras manchetes começaram a surgir. "Rede Internacional Revela Conspiração Política de Alto Escalão". O impacto foi imediato. Chamadas ao vivo começaram a debater o vazamento, enquanto os principais conspiradores corriam para se esconder.</p>
+        <p>O relógio corria contra todos. Júlia e Lucas sabiam que sua segurança estava em risco, mas também que haviam dado o primeiro passo para expor a verdade. O tabuleiro político estava virando, e o jogo agora era de sobrevivência.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo8.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo10.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

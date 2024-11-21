@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 15</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo15" -->
+    <div class="container capitulo" id="capitulo15">
+        <h1 class="chapter-number">Capítulo 15</h1>
+        <h2 class="chapter-title">O Contra-ataque</h2>
+        <p>O dia amanheceu com uma nova onda de tensão. As publicações de Júlia e Pedro desmentindo as manipulações do grupo conspiratório ganharam força, mas também atraíram novos ataques. "Eles estão tentando nos silenciar", disse Pedro, mostrando uma série de ameaças enviadas às redes sociais da equipe.</p>
+        <p>No Palácio das Decisões, o presidente se reuniu com especialistas em segurança digital. "Se continuarmos reagindo, nunca seremos proativos", disse ele. "Quero uma análise completa de quem está por trás dessas campanhas."</p>
+        <p>Enquanto isso, Rafael organizava os dados recebidos do ex-membro do grupo conspiratório. Ele revelou a Júlia que o grupo planejava uma ação coordenada envolvendo figuras-chave do governo para criar um colapso institucional. "Se conseguirmos expor isso antes que aconteça, podemos evitar o pior", disse ele.</p>
+        <p>Do lado conspiratório, o líder percebeu que estava perdendo terreno. "Eles estão conseguindo virar a narrativa contra nós", admitiu. "Precisamos de um impacto que os paralise, algo que os force a se defender em vez de atacar."</p>
+        <p>Júlia e Pedro decidiram lançar uma transmissão ao vivo em horário nobre, reunindo provas concretas e depoimentos de especialistas para desmascarar o plano do grupo. "Vamos mostrar ao público como eles estão tentando sabotar a democracia", afirmou Júlia com convicção.</p>
+        <p>A transmissão começou às 20h, com uma audiência recorde. Júlia apresentou os dados recebidos por Rafael e desafiou publicamente o grupo conspiratório a responder às acusações. "Vocês não podem mais operar nas sombras", declarou ela. A reação foi imediata, com manifestações em massa e cobertura global da mídia.</p>
+        <p>Mas o grupo conspiratório não ficou parado. Durante a transmissão, eles lançaram uma campanha de desinformação massiva, tentando desacreditar Júlia e sua equipe. Lucas, atento, começou a rebater as mentiras em tempo real, com evidências irrefutáveis. "Não vamos recuar", disse ele.</p>
+        <p>O contra-ataque estava em pleno andamento, e a batalha pela verdade alcançava um novo nível de intensidade. Júlia, Pedro, Lucas e Rafael sabiam que a luta estava longe de acabar, mas cada movimento os aproximava mais de expor toda a verdade.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo14.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo16.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

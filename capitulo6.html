@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 6</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo6" -->
+    <div class="container capitulo" id="capitulo6">
+        <h1 class="chapter-number">Capítulo 6</h1>
+        <h2 class="chapter-title">O Delator e o Jogo nas Sombras</h2>
+        <p>Na madrugada silenciosa, Júlia estacionou o carro em um local deserto, como combinado com o delator. Lucas estava ao seu lado, inquieto. "Você tem certeza disso?", perguntou ele, enquanto observava os arredores. "Não sabemos nada sobre esse 'Corvo'."</p>
+        <p>"Não temos escolha", respondeu Júlia, mantendo os olhos fixos na escuridão. "Se ele realmente souber o que está acontecendo, pode ser a única chance de expor tudo antes que seja tarde demais."</p>
+        <p>Do outro lado da cidade, o líder do grupo conspiratório revisava seus próximos passos. Em uma sala escura, mapas e fotografias cobriam as paredes. "Eles estão se movendo mais rápido do que esperávamos", disse para sua equipe. "Mas ainda temos a vantagem."</p>
+        <p>De volta ao encontro, uma figura encapuzada apareceu no horizonte. Júlia e Lucas saíram do carro com cautela. "Você é o Corvo?", perguntou Júlia. A figura assentiu e entregou um pendrive. "Aqui está tudo o que você precisa. Mas cuidado: eles estão te observando."</p>
+        <p>O pendrive continha informações chocantes. Relatórios detalhados conectavam figuras do alto escalão político e econômico ao grupo conspiratório. "Isso é devastador", disse Lucas, enquanto analisava os dados em seu laptop. "Mas se eles souberem que temos isso, virão atrás de nós."</p>
+        <p>No Palácio das Decisões, o presidente recebeu informações sobre o encontro de Júlia. "Monitore-os de perto", ordenou, desconfiado de que até mesmo aliados poderiam estar envolvidos na trama.</p>
+        <p>O jogo nas sombras se intensificava. Júlia e Lucas agora carregavam uma prova crucial, mas a exposição disso poderia custar-lhes tudo. O tabuleiro estava em chamas, e o próximo movimento seria decisivo.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo5.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo7.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

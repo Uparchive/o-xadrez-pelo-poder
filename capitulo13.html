@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 13</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo13" -->
+    <div class="container capitulo" id="capitulo13">
+        <h1 class="chapter-number">Capítulo 13</h1>
+        <h2 class="chapter-title">Xeque na Narrativa</h2>
+        <p>O amanhecer trouxe um clima de incerteza. Nas ruas, os protestos continuavam a crescer, e a tensão atingia novos níveis. Júlia acordou com uma mensagem de Pedro: "A nova transmissão vai ao ar em uma hora. Precisamos garantir que ela alcance o maior número de pessoas possível."</p>
+        <p>No Palácio das Decisões, o presidente convocou uma reunião emergencial. "Precisamos de uma declaração forte e clara", disse o chefe de comunicação. "Se não controlarmos a narrativa, eles vão tomar o poder da opinião pública."</p>
+        <p>Do outro lado da cidade, o líder do grupo conspiratório sentia a pressão aumentar. "Eles estão reagindo rápido demais", admitiu. "Mas ainda temos uma carta na manga."</p>
+        <p>Às 8h, a transmissão de Pedro começou. Desta vez, ele trouxe especialistas e testemunhas para confirmar as informações reveladas no dia anterior. "Estamos lidando com uma tentativa coordenada de manipular a opinião pública e sabotar a democracia", afirmou ele.</p>
+        <p>As redes sociais explodiram. A hashtag #VerdadePelaDemocracia alcançou os trending topics em minutos, enquanto aliados do grupo conspiratório lançavam campanhas para desacreditar Pedro e sua equipe.</p>
+        <p>Enquanto isso, Rafael revelou outra peça do quebra-cabeça: uma gravação de uma reunião secreta do grupo conspiratório, onde seu líder detalhava planos para desestabilizar o governo. "Isso é a prova que precisamos", disse Lucas, ao ouvir a gravação.</p>
+        <p>Júlia decidiu agir imediatamente. "Vamos enviar essa gravação diretamente para os jornalistas internacionais. Eles podem autenticar e espalhar isso antes que alguém tente suprimir."</p>
+        <p>No entanto, o grupo conspiratório estava um passo à frente. Agentes infiltrados no governo vazaram informações para desviar a atenção do público, criando uma crise fabricada envolvendo falsas alegações contra o presidente.</p>
+        <p>O tabuleiro estava em xeque. Cada movimento se tornava mais arriscado, e o tempo para expor toda a verdade estava se esgotando. Júlia e sua equipe sabiam que precisariam ser mais rápidos e inteligentes para virar o jogo de vez.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo12.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo14.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

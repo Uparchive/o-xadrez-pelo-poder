@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 17</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo17" -->
+    <div class="container capitulo" id="capitulo17">
+        <h1 class="chapter-number">Capítulo 17</h1>
+        <h2 class="chapter-title">A Primeira Chama</h2>
+        <p>Nas primeiras horas do dia, a equipe de Júlia iniciou uma transmissão de emergência para alertar o público sobre a iminente sabotagem do grupo conspiratório. "Se não agirmos agora, o caos será inevitável", disse Júlia ao abrir a transmissão.</p>
+        <p>No Palácio das Decisões, o presidente recebeu um relatório urgente sobre o plano do grupo conspiratório. "Isso confirma os dados que já tínhamos", disse o chefe de inteligência. "Eles estão mirando na rede elétrica da capital para causar pânico em massa."</p>
+        <p>Do lado conspiratório, o líder instruía sua equipe. "Aproveitem o momento de distração. Enquanto eles tentam impedir a sabotagem, teremos a oportunidade perfeita para mover nossas peças principais."</p>
+        <p>Enquanto isso, Rafael trabalhava para identificar os responsáveis diretos pelo plano de sabotagem. "Esses nomes precisam ser expostos imediatamente", disse ele a Lucas, enquanto analisava os dados obtidos do informante.</p>
+        <p>A tensão aumentou quando surgiram os primeiros sinais de interrupções na rede elétrica. Júlia e sua equipe divulgaram rapidamente as informações para a imprensa e autoridades, mas sabiam que a reação do público seria imprevisível. "Se o medo tomar conta, eles vencem", afirmou Pedro.</p>
+        <p>Nas ruas, manifestações começaram a se formar em resposta às revelações. Enquanto algumas pessoas exigiam proteção e respostas do governo, outras aproveitavam a situação para intensificar o caos, exatamente como o grupo conspiratório planejava.</p>
+        <p>Júlia decidiu usar a transmissão para chamar à calma e à união. "Este é o momento em que devemos lutar pela democracia, juntos. Não deixem que eles nos dividam", disse ela com firmeza. Suas palavras começaram a ressoar nas redes sociais, e a hashtag #UnidosPelaVerdade ganhou força rapidamente.</p>
+        <p>No entanto, o grupo conspiratório não estava disposto a recuar. Em um movimento ousado, lançaram novas acusações falsas contra o governo e contra a equipe de Júlia, tentando desviar a atenção do público. Lucas e Pedro imediatamente começaram a desmontar as alegações em tempo real.</p>
+        <p>A primeira chama da verdade havia sido acesa, mas Júlia sabia que o fogo ainda precisava se espalhar. O tabuleiro estava longe de ser resolvido, e cada movimento seria decisivo nos dias que se seguiriam.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo16.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo18.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 19</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo19" -->
+    <div class="container capitulo" id="capitulo19">
+        <h1 class="chapter-number">Capítulo 19</h1>
+        <h2 class="chapter-title">Xeque Duplo</h2>
+        <p>Com a batalha digital em andamento, Júlia sabia que a próxima jogada precisaria ser precisa e devastadora. "Não temos espaço para erros", disse ela enquanto revisava os últimos relatórios enviados por Rafael. "Qualquer passo em falso pode nos custar tudo."</p>
+        <p>No Palácio das Decisões, o presidente foi informado sobre as conexões financeiras entre o grupo conspiratório e as empresas de tecnologia. "Isso muda tudo", afirmou. "Se pudermos provar que eles estão financiando essas campanhas, será o fim deles."</p>
+        <p>Do lado conspiratório, o líder pressionava sua equipe. "Eles estão chegando perto demais", alertou. "Precisamos desviar a atenção antes que eles nos ataquem diretamente."</p>
+        <p>Júlia e Pedro decidiram usar a estratégia de xeque duplo: uma combinação de revelações simultâneas que atingiriam o grupo conspiratório e seus financiadores ao mesmo tempo. "Vamos expor todas as conexões financeiras enquanto mostramos as manipulações digitais em tempo real", explicou Pedro.</p>
+        <p>Enquanto isso, Lucas coordenava uma equipe de analistas para preparar os dados. "Se fizermos isso certo, será impossível para eles contra-atacarem rapidamente", afirmou. As provas começaram a ser organizadas em um dossiê digital acessível a jornalistas internacionais.</p>
+        <p>Às 21h, a equipe lançou a primeira fase da operação. Um vídeo detalhado com todas as evidências foi publicado nas redes sociais e enviado diretamente à imprensa. A reação foi imediata: manchetes começaram a surgir em todo o mundo, e a hashtag #XequeDuplo tornou-se viral.</p>
+        <p>Do outro lado, o grupo conspiratório tentou reagir lançando mais desinformação, mas a quantidade de provas apresentadas tornou suas tentativas cada vez menos eficazes. "Eles estão se desintegrando", disse Rafael, monitorando as respostas nas redes sociais.</p>
+        <p>Nas ruas, os protestos ganharam um novo tom. As pessoas exigiam justiça não apenas contra o grupo conspiratório, mas também contra as empresas que haviam facilitado suas ações. O governo, pressionado, começou a mobilizar investigações formais.</p>
+        <p>O xeque duplo havia funcionado, mas Júlia sabia que o jogo ainda não estava terminado. "Eles ainda têm aliados poderosos", alertou ela. "Precisamos nos preparar para o próximo movimento deles."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo18.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo20.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

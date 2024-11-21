@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 10</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo10" -->
+    <div class="container capitulo" id="capitulo10">
+        <h1 class="chapter-number">Capítulo 10</h1>
+        <h2 class="chapter-title">Vazamentos e Alianças Inesperadas</h2>
+        <p>As manchetes continuavam a se espalhar como fogo em um campo seco. Júlia, Lucas e Pedro assistiam atentamente às reações do público e das autoridades. "Eles estão tentando desmentir, mas a quantidade de provas é esmagadora", disse Pedro, com um leve sorriso de satisfação.</p>
+        <p>No Palácio das Decisões, o presidente enfrentava uma sala cheia de aliados e adversários, todos exigindo respostas rápidas. "Se não controlarmos isso agora, o caos tomará conta do país", alertou um de seus conselheiros. Mas o presidente sabia que a confiança estava frágil, e qualquer passo em falso poderia ser fatal.</p>
+        <p>Enquanto isso, no grupo conspiratório, o líder descobriu que um de seus membros havia desertado. "Ele levou informações sensíveis", disse um subordinado nervoso. "Isso pode nos expor." O líder cerrou os punhos e respondeu com frieza: "Encontraremos ele antes que possa fazer algo."</p>
+        <p>Júlia e Lucas receberam uma mensagem inesperada do desertor, identificado apenas como "Rafael". Ele oferecia informações adicionais em troca de proteção. "Isso pode ser uma armadilha", advertiu Lucas. "Mas também pode ser a chave para desmontar toda a operação."</p>
+        <p>Nas redes sociais, a batalha pela narrativa se intensificava. Perfis anônimos ligados ao grupo conspiratório tentavam desacreditar os jornalistas e a integridade das informações publicadas, enquanto outros clamavam por justiça e reformas.</p>
+        <p>Júlia decidiu arriscar e marcou um encontro com Rafael em um local público, enquanto Pedro preparava uma transmissão ao vivo para amplificar o impacto das novas informações. "Se isso funcionar, será um golpe fatal para eles", disse Pedro, ajustando as câmeras e o equipamento de som.</p>
+        <p>No horário combinado, Júlia e Lucas encontraram Rafael. Ele estava visivelmente nervoso, mas determinado. "Eu tenho o que vocês precisam", disse ele, entregando um dispositivo contendo dados detalhados sobre as operações do grupo. "Mas precisamos agir rápido. Eles já estão me caçando."</p>
+        <p>O tabuleiro estava mudando mais uma vez. As alianças inesperadas traziam novas esperanças, mas também novos riscos. A luta pela verdade e pela sobrevivência estava longe de acabar.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo9.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo11.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

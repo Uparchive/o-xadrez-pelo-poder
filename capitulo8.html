@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 8</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo8" -->
+    <div class="container capitulo" id="capitulo8">
+        <h1 class="chapter-number">Capítulo 8</h1>
+        <h2 class="chapter-title">O Contragolpe</h2>
+        <p>Enquanto o grupo conspiratório avançava com seu plano, Júlia e Lucas se reuniam com o jornalista de confiança, Pedro Maia, em um apartamento seguro. "Essas informações são explosivas", disse Pedro, após revisar os documentos do pendrive. "Se publicarmos isso, o impacto será imediato, mas precisamos de cautela."</p>
+        <p>Do outro lado da cidade, no subsolo do prédio abandonado, o líder conspiratório se preparava para um pronunciamento clandestino transmitido por uma rede criptografada. "Estamos aqui para libertar a nação das amarras de um sistema corrupto", dizia a mensagem gravada, planejada para ser divulgada após uma ação orquestrada.</p>
+        <p>No Palácio das Decisões, o presidente recebeu informações fragmentadas sobre o plano do grupo. "Eles estão planejando um ataque coordenado", alertou o chefe de inteligência. "Precisamos agir antes que eles executem isso."</p>
+        <p>Júlia e Lucas, com o apoio de Pedro, elaboraram uma estratégia para vazar as informações. "Precisamos de uma rede internacional de jornalistas", sugeriu Pedro. "Se mantivermos isso apenas no território nacional, eles podem suprimir a história."</p>
+        <p>Enquanto isso, as redes sociais se tornavam o palco de uma batalha ideológica. Memes, vídeos e textos manipulados dividiam ainda mais a população, criando um clima de tensão insuportável. Júlia sabia que o tempo era curto. "Se não fizermos algo agora, eles vão vencer."</p>
+        <p>Do lado conspiratório, a hesitação de um dos membros aumentava. "Estamos cruzando uma linha perigosa", disse ele ao líder. "Isso não é mais sobre o que acreditamos, é sobre poder puro." O líder não teve piedade. "Se você não está conosco, está contra nós."</p>
+        <p>A publicação das informações estava marcada para a meia-noite. Júlia, Lucas e Pedro sabiam que não poderiam cometer erros. "Eles vão tentar nos silenciar", disse Pedro. "Mas, se fizermos isso certo, não haverá como parar a verdade."</p>
+        <p>O relógio corria, e o contragolpe estava em andamento. As forças se alinhavam em lados opostos, enquanto o tabuleiro político queimava. O xeque-mate se aproximava, mas quem sairia vitorioso ainda era incerto.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo7.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo9.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

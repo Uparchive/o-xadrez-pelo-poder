@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 20</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo20" -->
+    <div class="container capitulo" id="capitulo20">
+        <h1 class="chapter-number">Capítulo 20</h1>
+        <h2 class="chapter-title">O Contra-Ataque Final</h2>
+        <p>A noite após o xeque duplo foi marcada por uma relativa calmaria, mas Júlia sabia que o silêncio era apenas o prelúdio de um novo ataque. "Eles estão reagrupando", disse ela, enquanto revisava as análises de Rafael. "Não vão aceitar essa derrota facilmente."</p>
+        <p>No Palácio das Decisões, o presidente recebeu relatórios das investigações iniciadas contra as empresas de tecnologia envolvidas. "Os nomes estão começando a surgir", disse o ministro da Justiça. "Mas precisamos de algo concreto antes de movermos contra eles."</p>
+        <p>Do outro lado, o grupo conspiratório iniciou seu contra-ataque. Usando os recursos que ainda tinham, começaram a espalhar uma narrativa de perseguição política, buscando atrair simpatizantes e desviar a atenção das acusações contra eles. "Se nos pintarmos como vítimas, o público vai começar a questionar as intenções do governo", afirmou o líder.</p>
+        <p>Júlia e Pedro decidiram agir rápido. "Precisamos antecipar cada movimento deles e reforçar a credibilidade das nossas revelações", sugeriu Pedro. A equipe começou a organizar uma nova transmissão, desta vez focada em desmontar a narrativa de perseguição criada pelo grupo.</p>
+        <p>Enquanto isso, Lucas recebeu uma mensagem anônima com coordenadas de um local onde supostamente estavam armazenados arquivos comprometedores do grupo conspiratório. "Pode ser uma armadilha", alertou Rafael. Mas Júlia sabia que precisavam arriscar. "Se for verdade, isso pode ser a prova definitiva que precisamos", afirmou.</p>
+        <p>Na madrugada, Júlia, Lucas e Rafael seguiram para o local indicado. O que encontraram foi mais do que esperavam: documentos físicos, gravações e dispositivos digitais que detalhavam anos de operações do grupo. "Isso é um tesouro", disse Lucas, enquanto catalogava os materiais.</p>
+        <p>Do lado conspiratório, o líder percebeu que algo estava errado. "Eles descobriram algo importante", disse ele, com um olhar preocupado. "Preparem um ataque surpresa. Não podemos deixar isso chegar ao público."</p>
+        <p>Ao amanhecer, a equipe de Júlia começou a trabalhar freneticamente para digitalizar e verificar os novos dados. "Isso pode acabar com eles", disse Rafael. "Mas precisamos ser rápidos. Eles não vão esperar para reagir."</p>
+        <p>O contra-ataque final estava em andamento. Júlia sabia que o próximo movimento seria decisivo, e o risco nunca foi tão alto.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo19.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('continua.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 14</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo14" -->
+    <div class="container capitulo" id="capitulo14">
+        <h1 class="chapter-number">Capítulo 14</h1>
+        <h2 class="chapter-title">Os Bastidores da Crise</h2>
+        <p>O caos político tomava proporções inéditas. Nas ruas, os protestos alcançavam o ápice, enquanto no Palácio das Decisões o clima era de desespero. "Eles estão minando nossa base de apoio", disse o chefe de gabinete ao presidente. "Precisamos tomar medidas drásticas ou perderemos o controle."</p>
+        <p>Júlia, Lucas e Pedro assistiam aos desdobramentos com preocupação. "Eles estão jogando sujo", afirmou Pedro, mostrando um relatório sobre a manipulação massiva de informações nas redes sociais. "Precisamos encontrar um jeito de neutralizar isso."</p>
+        <p>Enquanto isso, Rafael recebia uma mensagem enigmática de um contato desconhecido. "Se você quiser sobreviver, encontre-se comigo. Tenho informações que podem mudar o rumo desse jogo." Ele hesitou, mas decidiu compartilhar a mensagem com Júlia.</p>
+        <p>No lado conspiratório, o líder dava as últimas instruções para seus subordinados. "Os manifestantes infiltrados já estão posicionados", disse ele. "O próximo passo é desencadear uma reação violenta das forças de segurança. Isso será a nossa vitória."</p>
+        <p>À tarde, Rafael encontrou o contato misterioso em um local isolado. Tratava-se de um ex-membro do grupo conspiratório que havia desertado meses antes. "Eles estão mais próximos do que você imagina", disse ele. "Mas há uma falha no plano deles, algo que você pode usar."</p>
+        <p>Enquanto isso, Júlia preparava uma nova estratégia de divulgação. "Precisamos expor a manipulação antes que eles provoquem uma crise irreversível", afirmou. Pedro começou a trabalhar em uma série de publicações que detalhariam os métodos usados pelo grupo conspiratório para distorcer a percepção pública.</p>
+        <p>À noite, as primeiras evidências da manipulação começaram a surgir nas redes. Vídeos, áudios e documentos falsificados foram desmentidos em tempo real, enfraquecendo a campanha do grupo. "Estamos virando o jogo", disse Lucas, animado. Mas Júlia sabia que ainda havia muito em jogo.</p>
+        <p>Os bastidores da crise estavam mais expostos do que nunca, mas o tabuleiro político ainda reservava surpresas. A luta por cada movimento estratégico continuava, e o próximo capítulo dessa batalha seria decisivo.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo13.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo15.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

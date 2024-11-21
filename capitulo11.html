@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 11</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo11" -->
+    <div class="container capitulo" id="capitulo11">
+        <h1 class="chapter-number">Capítulo 11</h1>
+        <h2 class="chapter-title">Os Primeiros Fragmentos</h2>
+        <p>Com os novos dados fornecidos por Rafael, Júlia, Lucas e Pedro passaram a noite analisando cada detalhe. "Isso é mais profundo do que imaginávamos", disse Pedro, enquanto ampliava uma série de documentos financeiros. "Eles têm financiamento internacional e uma rede de apoio bem estabelecida."</p>
+        <p>No Palácio das Decisões, o presidente foi alertado sobre a transmissão ao vivo planejada por Pedro. "Eles estão ganhando força com o público", informou seu chefe de comunicação. "Precisamos de uma mensagem que restaure a confiança e acalme os ânimos."</p>
+        <p>Do outro lado, o líder do grupo conspiratório percebeu que estava ficando sem tempo. "Preparem-se para a fase final", ordenou. "Precisamos agir antes que o impacto do vazamento fique irreversível."</p>
+        <p>A transmissão ao vivo de Pedro foi um sucesso imediato. Com dados claros e evidências visuais, ele expôs as conexões entre políticos, empresários e o grupo conspiratório. As redes sociais explodiram, divididas entre aqueles que pediam mudanças imediatas e outros que questionavam a veracidade das informações.</p>
+        <p>Enquanto isso, Júlia e Lucas monitoravam o impacto em tempo real. "Eles estão tentando desviar a atenção", disse Lucas, apontando para uma série de postagens que surgiam como contra-ataque. "Mas a verdade já está fora."</p>
+        <p>Nas ruas, manifestações começaram a se formar. Grupos pró-democracia marchavam em apoio às revelações, enquanto facções alinhadas ao grupo conspiratório tentavam promover desordem. A tensão subia rapidamente, e os primeiros confrontos foram relatados na capital.</p>
+        <p>Rafael, ainda em proteção com o grupo, revelou uma última peça importante do quebra-cabeça. "Eles planejam usar os protestos como desculpa para uma intervenção maior", disse ele. "Se não fizermos algo agora, eles vão conseguir o que querem."</p>
+        <p>O relógio continuava correndo, e o tabuleiro político estava em ebulição. Júlia sabia que precisariam de mais aliados para enfrentar o que estava por vir. "Isso é só o começo", disse ela, com determinação. "Vamos virar esse jogo."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo10.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo12.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

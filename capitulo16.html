@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 16</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo16" -->
+    <div class="container capitulo" id="capitulo16">
+        <h1 class="chapter-number">Capítulo 16</h1>
+        <h2 class="chapter-title">Movimentos na Sombra</h2>
+        <p>A noite trouxe uma calmaria aparente, mas a equipe de Júlia sabia que a guerra estava longe de terminar. "Estamos ganhando espaço, mas eles ainda têm recursos e aliados poderosos", alertou Rafael, enquanto examinava novos dados recebidos de sua fonte.</p>
+        <p>Enquanto isso, no Palácio das Decisões, o presidente revisava relatórios sobre as ações recentes do grupo conspiratório. "Eles estão desesperados, e isso os torna ainda mais perigosos", disse seu chefe de segurança. "Precisamos agir com precisão para evitar que eles recuperem a vantagem."</p>
+        <p>Do lado conspiratório, o líder reuniu seus principais aliados para traçar uma nova estratégia. "Nosso plano de desinformação sofreu um golpe, mas isso não significa que perdemos", disse ele com determinação. "Precisamos atacar diretamente a credibilidade deles."</p>
+        <p>Júlia, Pedro e Lucas trabalharam durante a madrugada para preparar uma nova campanha de esclarecimento. "Eles não podem esconder a verdade por muito tempo", afirmou Pedro. "Precisamos garantir que a próxima onda de revelações seja impossível de contestar."</p>
+        <p>Enquanto isso, um informante do grupo conspiratório entrou em contato com Lucas. "Eu quero sair, mas preciso de proteção", dizia a mensagem. Lucas decidiu compartilhar a informação com Júlia, que imediatamente começou a organizar uma operação para resgatar o informante sem atrair atenção.</p>
+        <p>A tensão aumentou quando vídeos manipulados começaram a circular nas redes sociais, tentando incriminar a equipe de Júlia em um suposto escândalo. Lucas rapidamente começou a desmontar a farsa, publicando análises detalhadas que desmascaravam as manipulações.</p>
+        <p>Às primeiras horas da manhã, a equipe conseguiu entrar em contato com o informante e garantir sua segurança. Ele revelou detalhes de uma operação iminente do grupo conspiratório que visava sabotar uma infraestrutura crítica para provocar pânico generalizado. "Eles querem criar o caos para se posicionarem como salvadores", explicou.</p>
+        <p>Júlia sabia que essa informação era crucial. "Precisamos expor isso antes que eles possam agir", disse ela. A equipe começou a trabalhar em uma transmissão de emergência para alertar a população e as autoridades sobre o plano.</p>
+        <p>Os movimentos na sombra continuavam, e o jogo estava mais intenso do que nunca. A verdade era sua maior arma, mas o tempo estava contra eles.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo15.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo17.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 12</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo12" -->
+    <div class="container capitulo" id="capitulo12">
+        <h1 class="chapter-number">Capítulo 12</h1>
+        <h2 class="chapter-title">O Tabuleiro em Chamas</h2>
+        <p>As primeiras horas após a transmissão ao vivo foram caóticas. Nas ruas, milhares de manifestantes se reuniam, exigindo respostas e justiça. Júlia observava as transmissões ao vivo das manifestações enquanto Lucas e Pedro discutiam os próximos passos. "Precisamos aproveitar essa mobilização antes que eles a deturpem", disse Lucas.</p>
+        <p>No Palácio das Decisões, a pressão sobre o presidente aumentava. Conselheiros sugeriam medidas extremas para conter os protestos, mas o presidente hesitava. "Se usarmos força agora, seremos acusados de autoritarismo. Precisamos de uma abordagem mais estratégica", afirmou.</p>
+        <p>Do lado conspiratório, o líder organizava sua resposta. "Os protestos são uma oportunidade", disse ele para sua equipe. "Se conseguirmos criar o caos necessário, o governo será forçado a tomar decisões que fortalecerão nossa posição."</p>
+        <p>Enquanto isso, Rafael recebia uma nova ameaça. Uma mensagem anônima chegou ao telefone criptografado que ele usava. "Você não pode se esconder para sempre", dizia a mensagem. Júlia e Lucas reforçaram sua segurança, temendo que ele fosse o próximo alvo.</p>
+        <p>Nas redes sociais, bots e influenciadores alinhados ao grupo conspiratório espalhavam boatos de que os protestos eram financiados por interesses estrangeiros. Pedro começou a trabalhar em uma campanha para desmentir essas alegações e reforçar a credibilidade das informações vazadas.</p>
+        <p>À medida que o dia avançava, confrontos entre manifestantes e forças de segurança se tornaram mais frequentes. Rafael revelou que o grupo conspiratório planejava infiltrar agentes nos protestos para intensificar o caos. "Eles querem justificar uma intervenção militar", explicou.</p>
+        <p>Júlia sabia que era hora de agir. Com a ajuda de Pedro, ela preparou uma nova transmissão ao vivo, desta vez com foco nas táticas de desestabilização usadas pelo grupo conspiratório. "O público precisa entender o que está realmente acontecendo", disse ela. "A verdade é nossa maior arma."</p>
+        <p>O tabuleiro político estava em chamas. Cada movimento era crucial, e o equilíbrio entre ordem e caos nunca esteve tão frágil. Júlia, Lucas e Pedro sabiam que estavam em um jogo perigoso, mas também que estavam mais perto de expor toda a verdade.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo11.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo13.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

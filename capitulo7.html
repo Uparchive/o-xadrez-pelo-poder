@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo7" -->
+    <div class="container capitulo" id="capitulo7">
+        <h1 class="chapter-number">Capítulo 7</h1>
+        <h2 class="chapter-title">Xeque à Democracia</h2>
+        <p>Ao amanhecer, Júlia e Lucas deixaram o local do encontro e seguiram para um esconderijo improvisado. "Precisamos de tempo para entender a extensão disso", disse Júlia, enquanto copiava os arquivos do pendrive para um disco criptografado. "Essa prova pode derrubar muita gente poderosa."</p>
+        <p>No Palácio das Decisões, o presidente analisava relatórios de inteligência. A movimentação do grupo conspiratório havia aumentado significativamente nas últimas 24 horas. "Eles estão escalando suas operações", disse o chefe de segurança. "Se não agirmos rápido, poderemos perder o controle."</p>
+        <p>Do lado conspiratório, o líder traçava uma jogada ousada. "Precisamos de um ato que coloque a nação em estado de choque", afirmou. "Algo que enfraqueça completamente a confiança no governo e nos dê a vantagem definitiva."</p>
+        <p>Nas redes sociais, vídeos falsificados começaram a circular, mostrando supostos abusos de poder por parte do governo. As imagens eram tão bem elaboradas que até mesmo veículos de mídia começaram a questionar sua autenticidade. Júlia percebeu a tática: "Eles querem desestabilizar a confiança pública para justificar um golpe."</p>
+        <p>Lucas sugeriu: "Precisamos divulgar essas informações rapidamente, mas de forma segura. O público precisa saber a verdade antes que seja tarde demais."</p>
+        <p>Enquanto isso, no subsolo de um edifício abandonado, o grupo conspiratório realizava os preparativos para uma operação audaciosa. Um de seus membros, porém, começou a demonstrar sinais de hesitação. "Se isso der errado, estaremos condenados", disse ele, recebendo um olhar frio do líder.</p>
+        <p>Júlia e Lucas decidiram entrar em contato com um jornalista de confiança, alguém que poderia ajudar a expor os documentos sem comprometer sua segurança. Mas sabiam que cada passo seria monitorado, e que o risco de serem interceptados crescia a cada movimento.</p>
+        <p>O jogo estava em xeque. A democracia balançava enquanto as peças no tabuleiro se moviam em direções imprevisíveis. A próxima jogada poderia determinar o destino de todos.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo6.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo8.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>
