@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 21</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo21" -->
+    <div class="container capitulo" id="capitulo21">
+        <h1 class="chapter-number">Capítulo 21</h1>
+        <h2 class="chapter-title">O Caos Começa</h2>
+        <p>A madrugada avançava, mas a calmaria era ilusória. Júlia e sua equipe mal tinham tempo para respirar enquanto analisavam os documentos encontrados. Entre e-mails criptografados, contas bancárias e contratos ocultos, um padrão sombrio emergia: o grupo conspiratório estava preparando um movimento devastador.</p>
+        <p>Do outro lado, o líder do grupo conspiratório recebia informações sobre a operação de Júlia. "Eles encontraram algo que pode nos destruir", disse um informante infiltrado. "Mas ainda temos tempo para reagir."</p>
+        <p>Às 3h, o silêncio da noite foi rompido. Júlia e sua equipe estavam no escritório quando as luzes piscavam. "Estamos sendo invadidos", disse Lucas, correndo para verificar os sistemas de segurança. O prédio foi cercado por homens armados, enviados pelo grupo conspiratório para recuperar os documentos.</p>
+        <p>"Precisamos sair daqui agora!", gritou Rafael, enquanto Lucas transferia os arquivos para uma unidade segura. Júlia pegou o celular e acionou uma transmissão ao vivo improvisada. "Se algo acontecer conosco, o mundo saberá a verdade", disse ela, com a voz trêmula, enquanto sons de tiros ecoavam.</p>
+        <p>A equipe conseguiu escapar por uma saída de emergência, mas o confronto foi intenso. Lucas foi ferido de raspão no braço, e a adrenalina estava a mil. "Eles estão mais desesperados do que imaginávamos", disse Pedro, ao dirigir para um esconderijo improvisado.</p>
+        <p>Enquanto isso, nas redes sociais, a transmissão de Júlia viralizava. Milhares de pessoas assistiram ao ataque em tempo real, aumentando a pressão sobre o grupo conspiratório. Mas isso também atraiu novos riscos. "Eles agora sabem que não podem mais operar nas sombras", disse Júlia, enquanto tratava o ferimento de Lucas.</p>
+        <p>O caos estava apenas começando. O grupo conspiratório não iria recuar, e Júlia sabia que cada movimento a partir de agora seria uma questão de vida ou morte.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo20.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo22.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 25</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo25" -->
+    <div class="container capitulo" id="capitulo25">
+        <h1 class="chapter-number">Capítulo 25</h1>
+        <h2 class="chapter-title">O Preço da Verdade</h2>
+        <p>A fuga do hotel foi frenética, e o impacto da captura de Miguel ainda reverberava na equipe. "Não podemos deixá-lo para trás", disse Júlia, enquanto eles buscavam refúgio em um novo local. "Ele arriscou tudo por nós."</p>
+        <p>Lucas começou a trabalhar imediatamente para decodificar as gravações. "Precisamos lançar isso antes que eles possam responder", afirmou. As provas capturadas eram contundentes, mostrando explicitamente os planos do grupo conspiratório para controlar as comunicações e silenciar os dissidentes.</p>
+        <p>Enquanto isso, no esconderijo, Rafael monitorava as redes sociais. "Eles estão se movimentando rápido para desacreditar qualquer vazamento", disse ele, enquanto analisava a disseminação de fake news acusando Júlia e sua equipe de fabricar as acusações.</p>
+        <p>No quartel-general do grupo conspiratório, o líder comemorava a captura de Miguel. "Ele é a chave para descobrir tudo o que eles sabem", afirmou, enquanto seus aliados iniciavam um interrogatório brutal. Miguel, mesmo sob intensa pressão, manteve-se em silêncio. "Vocês nunca vencerão", disse ele, encarando seus captores.</p>
+        <p>Júlia sabia que cada segundo era precioso. Com a ajuda de Pedro, iniciou uma transmissão ao vivo com as gravações capturadas no hotel. "O público precisa saber o que está em jogo", afirmou ela. "Estamos lutando contra uma ameaça direta à nossa democracia."</p>
+        <p>A transmissão rapidamente ganhou força, com milhares de pessoas compartilhando as evidências. Hashtags como #LibertemMiguel e #FimDaConspiração dominavam as redes. Mas a reação do grupo conspiratório foi imediata: ataques cibernéticos tentaram derrubar os servidores que hospedavam as provas.</p>
+        <p>Lucas, com sua experiência em tecnologia, conseguiu neutralizar os ataques. "Eles estão desesperados, mas ainda têm recursos de sobra", alertou. "Precisamos nos preparar para um contra-ataque ainda mais agressivo."</p>
+        <p>Enquanto isso, Júlia fez uma promessa pública durante a transmissão: "Miguel não será esquecido. Vamos libertá-lo e acabar com essa conspiração de uma vez por todas."</p>
+        <p>O preço da verdade era alto, e Júlia sabia que o caminho à frente seria ainda mais perigoso. Mas com o apoio crescente do público, a equipe estava mais determinada do que nunca a expor toda a verdade.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo24.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo26.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

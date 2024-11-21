@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 26</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo26" -->
+    <div class="container capitulo" id="capitulo26">
+        <h1 class="chapter-number">Capítulo 26</h1>
+        <h2 class="chapter-title">A Barganha Mortal</h2>
+        <p>Enquanto o mundo assistia à transmissão ao vivo de Júlia, a equipe vasculhava freneticamente os documentos do grupo conspiratório. Lucas, com as mãos tremendo de cansaço, encontrou algo chocante. "Vocês não vão acreditar nisso", disse ele, puxando um dossiê marcado com um nome codificado. Ao abrir, as palavras "Operação Silêncio Perpétuo" apareceram no cabeçalho.</p>
+        <p>Júlia leu rapidamente os detalhes. "É sobre a execução de uma figura política de peso", murmurou. "Eles planejaram e executaram... meu Deus, eles mandaram matar ela. É sobre... a Mariana Francês."</p>
+        <p>Pedro deixou o que estava fazendo e olhou fixamente para o documento. "Eles realmente fizeram isso? Essas provas são suficientes para ligar a conspiração diretamente à morte dela." Júlia fechou os olhos, tentando processar o peso da descoberta. "Isso muda tudo. Podemos usar isso."</p>
+        <p>Rafael, que ouvia tudo em silêncio, finalmente falou. "Se usarmos isso, vamos direto para a garganta deles. Mas pode ser nossa última cartada."</p>
+        <p>Júlia encarou os outros. "Miguel está com eles. Se temos algo com peso suficiente para negociar a liberdade dele, é isso."</p>
+        <p>Lucas balançou a cabeça, visivelmente tenso. "Isso é uma loucura. Eles podem simplesmente nos matar depois. Ou pior, destruir todas as provas e sumir com o Miguel."</p>
+        <p>"Foda-se o risco!", gritou Pedro, batendo na mesa. "Miguel está sendo torturado por esses desgraçados enquanto a gente fica aqui debatendo. Ou fazemos algo agora, ou eles ganham."</p>
+        <p>Júlia respirou fundo e pegou o celular. "Vamos fazer contato. Mas precisamos planejar isso direito. Uma entrega simples será suicídio."</p>
+        <p>Depois de horas de debate, a equipe decidiu enviar uma mensagem codificada diretamente ao líder do grupo conspiratório. "Sabemos o que vocês fizeram com Mariana Francês. Temos provas. Miguel por essa informação. Vocês escolhem."</p>
+        <p>A resposta chegou em menos de dez minutos: "Local e hora. Sem joguinhos. Ou todos vocês morrem."</p>
+        <p>Enquanto o relógio avançava, a equipe sabia que estavam prestes a entrar na fase mais perigosa da luta. Júlia olhou para o dossiê nas mãos, sentindo o peso de cada vida afetada por aquela conspiração. "Se isso for um jogo de xadrez", disse ela em voz baixa, "estamos prestes a arriscar tudo no xeque-mate."</p>        
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo25.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo27.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

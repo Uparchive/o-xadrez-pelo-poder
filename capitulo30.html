@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 30</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo30" -->
+    <div class="container capitulo" id="capitulo30">
+        <h1 class="chapter-number">Capítulo 30</h1>
+        <h2 class="chapter-title">Sacrifício</h2>
+        <p>O som dos tiros era ensurdecedor, ecoando pelas paredes do esconderijo. Júlia sentia o coração acelerado enquanto corria, carregando a mochila com o dossiê que poderia derrubar o grupo conspiratório. "Rafael, como está Miguel?", gritou ela, sem olhar para trás.</p>
+        <p>"Ele está piorando!", respondeu Rafael, quase carregando Miguel nos braços. "Não sei se ele vai aguentar muito mais."</p>
+        <p>Lucas estava na retaguarda, atirando de volta contra os homens que invadiam o prédio. "Eu não consigo segurar eles por muito tempo!", gritou, ofegante. "Puta merda, tem mais vindo pelo lado leste!"</p>
+        <p>Pedro, com o laptop ainda aberto, tentava transmitir os dados para um servidor seguro. "Júlia, precisamos de mais tempo!", implorou ele, enquanto digitava freneticamente. "Se não conseguirmos enviar isso, tudo será perdido."</p>
+        <p>Júlia sabia que estavam ficando sem opções. Eles precisavam de uma distração, algo que desse a Pedro o tempo necessário para finalizar a transmissão. "Rafael, leve Miguel para fora daqui. Lucas e eu vamos segurar eles."</p>
+        <p>"Você está louca?", gritou Rafael. "Não vou deixar vocês aqui!"</p>
+        <p>"Não tem escolha!", retrucou Júlia, com os olhos fixos nos invasores que se aproximavam. "Alguém precisa sair com Miguel e garantir que esses arquivos cheguem aonde precisam!"</p>
+        <p>Pedro finalmente levantou os olhos do laptop. "Júlia, está quase lá. Eu só preciso de mais dois minutos!"</p>
+        <p>Lucas, com o rosto sujo de sangue e suor, olhou para Júlia. "Vou dar cobertura. Se eu não voltar, termine isso por nós."</p>
+        <p>Antes que Júlia pudesse responder, Lucas correu para uma posição mais exposta, disparando contra os invasores. "Vem, seus desgraçados! Vocês não vão passar por mim!"</p>
+        <p>Os tiros se intensificaram, e Júlia viu Lucas cair atrás de uma pilha de caixas. "Lucas!", gritou ela, mas Rafael a puxou. "Não dá mais! Precisamos ir agora!"</p>
+        <p>Pedro fechou o laptop e correu em direção à saída, enquanto Júlia relutava em deixar Lucas para trás. "Puta merda...", murmurou ela, com lágrimas escorrendo pelo rosto. "Desculpa, Lucas."</p>
+        <p>Do lado de fora, a equipe encontrou um carro abandonado e conseguiu fugir, com Miguel desmaiado no banco de trás. Enquanto dirigia, Júlia olhou pelo retrovisor, vendo o esconderijo em chamas à distância. Lucas tinha ficado para trás, e ela sabia que ele provavelmente não havia sobrevivido.</p>
+        <p>No silêncio do carro, Pedro finalmente falou. "A transmissão foi concluída. O mundo vai saber o que aconteceu."</p>
+        <p>Júlia apertou o volante com força, engolindo a dor que ameaçava consumi-la. "Lucas morreu para garantir isso. Não podemos deixar que o sacrifício dele seja em vão."</p>
+        <p>O silêncio voltou a preencher o carro enquanto eles se afastavam. O preço havia sido alto, mas a luta estava longe de acabar.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo29.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('continua.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

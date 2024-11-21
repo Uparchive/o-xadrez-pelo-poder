@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 28</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo28" -->
+    <div class="container capitulo" id="capitulo28">
+        <h1 class="chapter-number">Capítulo 28</h1>
+        <h2 class="chapter-title">O Contra-ataque Silencioso</h2>
+        <p>O silêncio dentro do carro era cortante. Miguel, ainda pálido e visivelmente debilitado, tentava manter os olhos abertos. Júlia dirigia rapidamente pelas ruas desertas, enquanto Lucas e Rafael discutiam em voz baixa no banco de trás.</p>
+        <p>"Eles nos deram Miguel rápido demais", disse Lucas, ainda desconfiado. "Isso não faz sentido. É como se eles quisessem que saíssemos dali sem lutar."</p>
+        <p>"Ou eles acham que podem nos manipular de alguma forma", respondeu Rafael, ainda segurando o gravador escondido sob sua jaqueta. "O líder não parecia intimidado. Aquela merda foi só um teatro."</p>
+        <p>Júlia apertou o volante, mantendo o foco na estrada. "Precisamos verificar o dossiê completo assim que chegarmos. Se eles usarem algo contra nós, temos que estar um passo à frente."</p>
+        <p>De volta ao esconderijo improvisado, Pedro já os aguardava, monitorando as redes sociais. "As coisas estão pegando fogo lá fora", disse ele, enquanto mostrava uma tela cheia de postagens sobre o grupo conspiratório. "Eles estão tentando lançar outra campanha de desinformação, e é mais sofisticada do que antes."</p>
+        <p>Enquanto Rafael ajudava Miguel a se acomodar em um colchão improvisado, Lucas começou a examinar os documentos que o líder do grupo conspiratório pegou antes de entregá-los. "Se ele queria alguma coisa aqui, vamos descobrir o que é", murmurou.</p>
+        <p>Mas foi Pedro quem notou algo estranho. "Gente, tem um padrão nas hashtags que eles estão usando", disse ele, com os olhos fixos na tela. "Isso parece mais do que apenas desinformação... é como se eles estivessem tentando coordenar alguma coisa."</p>
+        <p>Lucas levantou os olhos do dossiê, franzindo a testa. "Você acha que é um código? Algo escondido nas mensagens?"</p>
+        <p>"Exatamente", respondeu Pedro, movendo os dedos rapidamente pelo teclado. "Se eu estiver certo, eles estão usando as redes para enviar instruções. E algo grande está prestes a acontecer."</p>
+        <p>Do outro lado da cidade, no quartel-general do grupo conspiratório, o líder analisava as imagens capturadas durante o encontro. "Eles acreditam que ganharam", disse ele para seus aliados. "Mas não têm ideia de que acabaram de cair em nossa armadilha."</p>
+        <p>De volta ao esconderijo, Júlia finalmente quebrou o silêncio. "Eles estão nos cercando. Seja o que for que estão planejando, já começou. Precisamos decifrar isso antes que seja tarde demais."</p>
+        <p>Rafael, ainda ao lado de Miguel, olhou para Júlia com seriedade. "E se o próximo movimento deles for algo muito maior? Algo que possa virar toda a narrativa contra nós?"</p>
+        <p>Júlia assentiu, sabendo que a batalha estava longe de terminar. "Então precisamos lutar ainda mais forte. E garantir que, quando o próximo ataque vier, estejamos prontos para derrubá-los de vez."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo27.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo29.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

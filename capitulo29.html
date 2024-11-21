@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 29</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo29" -->
+    <div class="container capitulo" id="capitulo29">
+        <h1 class="chapter-number">Capítulo 29</h1>
+        <h2 class="chapter-title">Cercados</h2>
+        <p>O amanhecer trouxe uma sensação inquietante ao esconderijo. O silêncio era apenas um disfarce para a tempestade que Júlia sabia que estava se aproximando. Rafael ajustava o volume de um rádio portátil, tentando captar algo nas frequências locais. "Está tudo estranho", disse ele. "Pouca atividade para um dia tão movimentado."</p>
+        <p>Pedro estava focado no monitor, rastreando as hashtags suspeitas que identificaram na noite anterior. "Eles estão movendo peças grandes", afirmou. "As mensagens coordenadas aumentaram nas últimas horas. Parece que algo vai acontecer simultaneamente em várias partes do país."</p>
+        <p>"Merda", murmurou Lucas, que verificava o perímetro do esconderijo. "Isso não é uma coincidência. Eles estão distraindo o público com desinformação enquanto preparam o próximo ataque."</p>
+        <p>Júlia se levantou da cadeira e encarou o grupo. "Precisamos agir antes que isso saia do controle. Se o que vimos nos códigos for verdade, eles podem estar mirando em uma infraestrutura crítica. Precisamos descobrir onde e quando."</p>
+        <p>Do outro lado da cidade, o líder do grupo conspiratório coordenava sua equipe. "Certifiquem-se de que todos os alvos estão preparados. O caos será nossa arma mais poderosa."</p>
+        <p>De volta ao esconderijo, Miguel, ainda fraco, aproximou-se de Júlia. "Eles não estão jogando mais para ganhar tempo", disse ele, com a voz rouca. "Esse é o fim do jogo para eles. Ou derrubam o sistema ou serão expostos."</p>
+        <p>Lucas entrou apressado na sala. "Pessoal, temos um problema", anunciou. "Acabei de detectar veículos suspeitos se aproximando da área. Acho que fomos encontrados."</p>
+        <p>Pedro fechou o laptop e começou a juntar os equipamentos. "Precisamos sair daqui agora. Eles não vão nos deixar com vida."</p>
+        <p>Júlia pegou o dossiê e o colocou em uma mochila. "Rafael, pegue Miguel. Lucas, cubra a retaguarda. Pedro, prepare a transmissão ao vivo. Se algo acontecer, o mundo precisa saber o que estamos enfrentando."</p>
+        <p>Antes que pudessem sair, os primeiros tiros ecoaram pelo esconderijo. Júlia se jogou no chão enquanto as balas quebravam as janelas. "Eles estão aqui!", gritou Lucas, puxando uma arma improvisada para tentar conter os atacantes.</p>
+        <p>Miguel tentou se levantar, mas caiu de joelhos. "Não me deixem para trás", implorou. Rafael o segurou e começou a carregá-lo. "Você vai sair daqui vivo, entendeu?", disse Rafael, com determinação.</p>
+        <p>Do lado de fora, os veículos cercavam o prédio, e os homens do grupo conspiratório avançavam. "Não deixem ninguém escapar", ordenou um deles pelo rádio.</p>
+        <p>Júlia e sua equipe correram para a saída de emergência, mas o caminho estava bloqueado. "Porra!", gritou Pedro, ao perceber que estavam cercados. "O que fazemos agora?"</p>
+        <p>Júlia respirou fundo, tentando ignorar o pânico crescente. "Vamos lutar. Se cairmos aqui, pelo menos faremos isso sabendo que não desistimos."</p>
+        <p>O som de tiros se intensificava, e a equipe sabia que estavam em uma luta pela sobrevivência. Cada decisão, cada movimento era crucial. O cerco estava apertando, mas Júlia sabia que ainda havia uma chance, mesmo que pequena, de virar o jogo.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo28.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo30.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

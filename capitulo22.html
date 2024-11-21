@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 22</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo22" -->
+    <div class="container capitulo" id="capitulo22">
+        <h1 class="chapter-number">Capítulo 22</h1>
+        <h2 class="chapter-title">Cerco Apertado</h2>
+        <p>Após a fuga dramática, Júlia e sua equipe se refugiaram em um armazém abandonado na periferia da cidade. "Precisamos reorganizar nossos próximos passos", disse Pedro, enquanto tentava acessar os arquivos transferidos por Lucas. "O que encontramos pode ser suficiente para expor toda a operação deles."</p>
+        <p>Enquanto isso, o líder do grupo conspiratório reunia seus aliados para uma resposta agressiva. "Eles estão vulneráveis, e agora é o momento de eliminá-los de vez", afirmou. "Mobilizem todas as nossas forças. Isso termina hoje."</p>
+        <p>Nas redes sociais, a transmissão de Júlia continuava a gerar reações explosivas. A opinião pública estava dividida, e hashtags tanto de apoio quanto de ataque ao grupo conspiratório dominaram as plataformas. Mas Júlia sabia que a atenção excessiva também os tornava alvos fáceis. "Estamos sendo monitorados", alertou Rafael. "Precisamos sair daqui antes que eles nos localizem."</p>
+        <p>Enquanto preparavam a mudança de esconderijo, Júlia recebeu uma ligação de um contato inesperado. Era um agente do governo que estava investigando o grupo conspiratório por conta própria. "Eu posso ajudar, mas preciso de provas concretas", disse ele. Júlia hesitou, mas decidiu enviar uma parte dos dados como teste de confiança.</p>
+        <p>No entanto, antes que pudessem se mover, o grupo conspiratório descobriu o esconderijo. Veículos se aproximaram, e homens armados cercaram o local. "Estamos sem saída!", gritou Lucas, enquanto procurava algo para improvisar uma defesa. "Precisamos ganhar tempo até que a ajuda chegue."</p>
+        <p>O confronto foi inevitável. Tiros ecoaram pelo armazém enquanto Júlia e sua equipe tentavam escapar novamente. Rafael liderou a fuga por uma passagem lateral enquanto Lucas e Pedro criavam distrações. "Não podemos perder esses documentos!", gritou Júlia, segurando firmemente a mochila com os dados.</p>
+        <p>Do lado de fora, eles encontraram uma van que o agente do governo havia enviado. "Entrem, rápido!", gritou o motorista. Enquanto fugiam, Júlia olhou para trás e viu o armazém sendo consumido pelas chamas. "Eles estão dispostos a destruir tudo para nos silenciar."</p>
+        <p>O cerco estava se apertando, mas Júlia sabia que haviam conseguido manter as provas seguras. "Isso está longe de terminar", disse ela, com o olhar firme. "Eles podem nos caçar, mas não vão nos calar."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo21.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo23.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 24</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo24" -->
+    <div class="container capitulo" id="capitulo24">
+        <h1 class="chapter-number">Capítulo 24</h1>
+        <h2 class="chapter-title">Golpe à Meia-Noite</h2>
+        <p>A tensão no esconderijo era palpável enquanto Miguel explicava os próximos passos. "Se o grupo conspiratório conseguir declarar estado de emergência, eles terão controle total sobre o sistema", disse ele, olhando para os rostos preocupados de Júlia e sua equipe. "Não podemos permitir que isso aconteça."</p>
+        <p>Rafael, analisando os dados, encontrou evidências de reuniões secretas agendadas para aquela noite. "Eles vão usar o caos causado pelas fake news para justificar a declaração", revelou ele. "Precisamos interceptar isso antes que seja tarde."</p>
+        <p>Enquanto isso, no lado conspiratório, o líder consolidava suas forças. "À meia-noite, vamos desencadear nossa operação final", afirmou ele para seus aliados. "O público está no limite, e qualquer fagulha será suficiente para justificar nosso movimento."</p>
+        <p>Júlia, Pedro e Miguel decidiram agir rapidamente. "Precisamos expor os participantes dessa reunião antes que eles tenham a chance de agir", disse ela, com determinação. Miguel utilizou seus contatos para localizar o local exato onde o encontro ocorreria: um hotel luxuoso no centro da cidade, camuflado como uma conferência de negócios.</p>
+        <p>Enquanto se preparavam, Júlia teve um momento de introspecção. "Estamos arriscando tudo", disse ela para Lucas, enquanto ajustava o equipamento de gravação. "Mas se não fizermos isso, eles vão destruir o que resta de liberdade."</p>
+        <p>Às 23h30, a equipe chegou ao hotel. Miguel conseguiu infiltrar-se com sua identidade de agente, enquanto Júlia e Pedro montavam um ponto de vigilância em um prédio próximo. Usando equipamentos de alta tecnologia, começaram a gravar as conversas e capturar imagens dos envolvidos.</p>
+        <p>A reunião começou pontualmente, e os detalhes eram estarrecedores. "Assim que o estado de emergência for declarado, controlaremos todas as comunicações e as redes sociais", disse um dos conspiradores. Júlia gravava tudo, mal contendo a indignação.</p>
+        <p>Quando o relógio marcou meia-noite, a equipe capturou o momento em que os participantes selaram seu acordo. "Agora, temos tudo o que precisamos", disse Miguel, preparando-se para sair. Mas algo deu errado. Um dos seguranças notou a movimentação suspeita e alertou os outros.</p>
+        <p>"Eles nos descobriram!", gritou Pedro, enquanto as luzes do hotel piscavam. Júlia e Lucas correram para escapar, enquanto Miguel tentava distrair os seguranças. "Levem as provas e garantam que cheguem ao público!", gritou ele.</p>
+        <p>A noite estava longe de terminar. A equipe conseguiu fugir com as gravações, mas Miguel foi capturado. Júlia, ao olhar para trás e vê-lo sendo levado, prometeu a si mesma: "Isso ainda não acabou. Vamos expor todos eles."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo23.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo25.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

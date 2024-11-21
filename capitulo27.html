@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 27</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo27" -->
+    <div class="container capitulo" id="capitulo27">
+        <h1 class="chapter-number">Capítulo 27</h1>
+        <h2 class="chapter-title">O Encontro</h2>
+        <p>A noite era densa e silenciosa enquanto Júlia dirigia em direção ao ponto de encontro. A tensão no carro era quase insuportável, cada respiração parecia pesar como chumbo. Lucas, no banco do passageiro, ajustava um pequeno gravador escondido sob a jaqueta. "Se algo der errado, precisamos de uma prova de que eles estiveram aqui", murmurou.</p>
+        <p>"Vai dar errado," disse Rafael no banco de trás. "Esses filhos da puta não têm nada a perder. Estamos literalmente entregando o pescoço."</p>
+        <p>Júlia apertou o volante com força, os nós dos dedos ficando brancos. "Não temos escolha. Miguel não pode ficar lá. E se eles tentarem alguma coisa... nós reagimos."</p>
+        <p>O local escolhido era um galpão abandonado nos limites da cidade. As luzes do lugar estavam apagadas, exceto por um único feixe que iluminava a entrada. Júlia estacionou o carro a alguns metros de distância, e a equipe saiu com o dossiê em mãos. "Fiquem juntos," disse ela. "E estejam prontos para correr."</p>
+        <p>Dentro do galpão, o líder do grupo conspiratório aguardava com três capangas armados. Miguel estava amarrado a uma cadeira, com hematomas espalhados pelo rosto. "Vocês realmente trouxeram algo interessante", disse o líder, com um sorriso sarcástico. "Mas eu me pergunto: será que vocês têm coragem suficiente para fazer isso valer a pena?"</p>
+        <p>Júlia deu um passo à frente, segurando o dossiê com força. "Nós temos tudo: datas, ordens, e até transferências que conectam vocês à morte de Mariana Francês. Vocês entregam Miguel agora ou o mundo inteiro saberá o que vocês fizeram."</p>
+        <p>O líder deu uma risada alta, um som frio e cortante que ecoou pelo galpão. "Vocês acham que isso nos assusta? O poder não se mantém com medo de revelações. Se o público soubesse de tudo o que já fizemos, estariam apavorados demais para reagir."</p>
+        <p>Rafael avançou, furioso. "Vocês são um bando de covardes arrogantes. Se acham que vamos cair sem lutar, estão fodidamente enganados!"</p>
+        <p>Um dos capangas apontou uma arma, mas o líder levantou a mão para detê-lo. "Calma. Quero ver até onde eles vão."</p>
+        <p>Júlia jogou o dossiê no chão, entre ela e o líder. "Pegue. Verifique. Mas se não soltarem Miguel agora, a próxima coisa que vocês verão será o mundo inteiro apontando para vocês."</p>
+        <p>O líder olhou para ela, avaliando. Então deu um sinal para que um de seus homens pegasse o dossiê. Enquanto isso, Miguel foi desamarrado, mas estava tão fraco que quase desmaiou. "Levem ele embora," ordenou o líder. "Mas saibam disso: a guerra só está começando."</p>
+        <p>Júlia ajudou Miguel a caminhar até o carro, enquanto Rafael e Lucas mantinham a vigilância. Quando o carro arrancou, Júlia finalmente permitiu que a adrenalina diminuísse. Mas ela sabia que aquela batalha estava longe de terminar. "Eles cederam rápido demais," disse Lucas. "O que isso significa?"</p>
+        <p>Júlia olhou para trás, vendo o galpão desaparecer na escuridão. "Significa que eles estão planejando algo muito pior."</p>        
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo26.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo28.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>
