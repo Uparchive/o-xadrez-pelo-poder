@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 31</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo31" -->
+    <div class="container capitulo" id="capitulo31">
+        <h1 class="chapter-number">Capítulo 31</h1>
+        <h2 class="chapter-title">Rescaldo</h2>
+        <p>O amanhecer encontrou a equipe em um motel decadente nos limites da cidade, suas roupas ainda manchadas de sangue e suor. Júlia não conseguia dormir. As palavras de Lucas ecoavam em sua mente, misturando-se com o som dos tiros que levaram sua vida. "Vem, seus desgraçados!"</p>
+        <p>Pedro estava sentado na pequena mesa do quarto, monitorando as redes sociais. "Está funcionando", disse ele, com a voz baixa. "As provas estão se espalhando. Os jornais internacionais começaram a cobrir."</p>
+        <p>"Mas isso vai ser suficiente?", perguntou Rafael, que estava encostado na parede, com os braços cruzados. "Ou será apenas mais uma manchete esquecida em uma semana?"</p>
+        <p>Miguel, ainda fraco, levantou a cabeça. "Não podemos parar agora. O sacrifício de Lucas... tem que significar alguma coisa."</p>
+        <p>Júlia finalmente quebrou o silêncio. "Lucas acreditava que poderíamos fazer a diferença. E ele estava certo. Mas isso não acabou. Não até garantirmos que eles sejam derrubados de vez."</p>
+        <p>De repente, o telefone descartável de Pedro vibrou. Ele olhou para a mensagem, e seu rosto empalideceu. "Eles estão contra-atacando."</p>
+        <p>Júlia se aproximou rapidamente. "O que é?"</p>
+        <p>"Estão tentando desacreditar tudo o que lançamos", respondeu Pedro. "Narrativas falsas, acusações contra a gente... eles estão jogando sujo. Mas tem mais. Parece que estão planejando algo maior."</p>
+        <p>Rafael deu um passo à frente. "O que você quer dizer com 'maior'?"</p>
+        <p>Pedro engoliu em seco. "Estão tentando isolar os principais centros de comunicação do país. Se conseguirem, vão controlar a narrativa antes que consigamos reagir."</p>
+        <p>Júlia fechou os olhos por um momento, respirando fundo. "Então temos que ir atrás deles. Diretamente. Chega de nos esconder."</p>
+        <p>Miguel tentou se levantar. "Eu conheço um lugar... um centro operacional deles. Podemos interceptar as próximas ordens. Mas será perigoso."</p>
+        <p>Júlia olhou para o grupo. Todos estavam exaustos, mas determinados. "Lucas deu tudo por isso. Não vamos desperdiçar."</p>
+        <p>Enquanto se preparavam para sair, Júlia pegou a mochila com os arquivos restantes. "Eles podem ter começado essa guerra, mas vamos garantir que sejam os últimos a cair."</p>
+        <p>O silêncio foi quebrado por um trovão distante, e a equipe saiu para enfrentar mais uma batalha. Cada passo os aproximava do momento final, onde a verdade seria sua única arma e o sacrifício de Lucas não seria em vão.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo30.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo32.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

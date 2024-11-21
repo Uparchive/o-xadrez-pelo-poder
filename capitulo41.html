@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 41</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo41" -->
+    <div class="container capitulo" id="capitulo41">
+        <h1 class="chapter-number">Capítulo 41</h1>
+        <h2 class="chapter-title">Revelações e Sacrifícios</h2>
+        <p>Com a explosão ainda ecoando nos ouvidos, Júlia e o restante da equipe correram para se reagrupar. Pedro segurava a mochila com o equipamento restante, enquanto Rafael, visivelmente exausto, mancava ao lado dele. "Ainda não acabou", disse Rafael entre respirações pesadas. "Eles sempre têm um plano de contingência."</p>
+        <p>"Precisamos avançar para o núcleo central", disse Mariana, consultando os mapas roubados do grupo conspiratório. "É onde os líderes estão. Se destruirmos isso, acabamos com a operação."</p>
+        <p>Enquanto avançavam, um corredor estreito os levou a uma sala de comando cheia de monitores. Neles, imagens de todo o mundo exibiam transmissões controladas pelo grupo conspiratório. Júlia sentiu um calafrio percorrer sua espinha. "Eles já estão dominando a narrativa global."</p>
+        <p>"Ainda podemos parar isso", disse Pedro, conectando seu laptop a um terminal. "Mas vai levar tempo."</p>
+        <p>De repente, uma voz ecoou pelo sistema de alto-falantes. Era o líder do grupo conspiratório. "Vocês acham que podem mudar algo? Tudo o que fizeram até agora foi atrasar o inevitável."</p>
+        <p>Júlia reconheceu a voz. "Você... era você o tempo todo." Um rosto familiar apareceu em um dos monitores. Era alguém do governo, alguém que eles acreditavam ser um aliado.</p>
+        <p>"Você realmente achou que poderia vencer?" disse o traidor, com um sorriso frio. "O poder não pertence ao povo, Júlia. Ele pertence àqueles que sabem usá-lo."</p>
+        <p>Enquanto a revelação chocava a equipe, guardas entraram na sala, armados até os dentes. Mariana e Rafael reagiram imediatamente, cobrindo Pedro enquanto ele trabalhava freneticamente. "Não podemos deixar isso acontecer!", gritou Mariana, disparando contra os invasores.</p>
+        <p>Pedro digitava sem parar. "Estou acessando o sistema principal! Mas precisa de um código que só pode ser ativado manualmente."</p>
+        <p>"Eu vou fazer isso", disse Mariana, largando a arma e pegando o cartão de acesso de um dos guardas caídos.</p>
+        <p>"Você não vai voltar", disse Júlia, segurando o braço dela.</p>
+        <p>"Eu sei", respondeu Mariana com um sorriso triste. "Mas é isso ou tudo o que fizemos terá sido em vão."</p>
+        <p>Mariana correu em direção ao núcleo do sistema enquanto Júlia e Rafael continuavam lutando. Pedro finalmente gritou: "Ela conseguiu! O sistema está em colapso!"</p>
+        <p>Uma explosão menor sacudiu a sala, sinalizando o fim do núcleo central. Mas no processo, Mariana foi perdida, e Rafael caiu no chão com um ferimento grave no abdômen.</p>
+        <p>"Não me deixe aqui", disse Rafael, tentando manter os olhos abertos. Júlia ajoelhou-se ao lado dele, lágrimas escorrendo pelo rosto. "Nós conseguimos, Rafael. Você conseguiu."</p>
+        <p>Enquanto a instalação começava a ruir, Pedro ajudou Júlia a carregar Rafael. O grupo restante saiu para a luz do amanhecer, carregando o peso de suas perdas, mas também o alívio da vitória. O mundo agora sabia a verdade, mas o preço foi alto.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo40.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo42.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

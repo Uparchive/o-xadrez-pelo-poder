@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 36</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo36" -->
+    <div class="container capitulo" id="capitulo36">
+        <h1 class="chapter-number">Capítulo 36</h1>
+        <h2 class="chapter-title">Traição nas Sombras</h2>
+        <p>Separados após a fuga caótica, cada membro da equipe enfrentava os próprios demônios. Júlia dirigia sozinha por uma estrada deserta, os pensamentos inundados por dúvidas. O peso das decisões que tomara era esmagador, mas a determinação em acabar com o grupo conspiratório ainda queimava dentro dela.</p>
+        <p>Enquanto isso, Pedro monitorava as movimentações nas redes sociais. Ele notou algo estranho nos padrões de interação. "Isso não está certo", murmurou. As postagens falsas tinham sido desativadas mais rápido do que o esperado, e um usuário com acesso a informações confidenciais estava publicando detalhes que só alguém de dentro do governo poderia saber.</p>
+        <p>Pedro imediatamente chamou Júlia. "Preciso falar com você. Acho que temos um infiltrado... mas do nosso lado."</p>
+        <p>"Você tem certeza?", respondeu Júlia, sua voz carregada de desconfiança. "Se for verdade, isso explica muita coisa, mas também complica tudo."</p>
+        <p>Em outra parte da cidade, Miguel encontrou um contato antigo, alguém que uma vez havia servido como aliado do grupo conspiratório, mas que agora parecia arrependido. "Eles estão mirando algo maior do que apenas o país", disse o homem, enquanto olhava nervosamente por cima do ombro. "Eles querem controle global das redes de comunicação."</p>
+        <p>Miguel sentiu o estômago revirar. "Isso é mais do que uma conspiração local", pensou. "Eles querem controlar o fluxo de informações do mundo."</p>
+        <p>Enquanto as peças se alinhavam, Júlia decidiu reunir a equipe novamente. Eles precisariam de todos os recursos possíveis para atacar diretamente o centro de comando do grupo conspiratório. Mas antes de se mover, uma mensagem anônima chegou ao telefone de Pedro. "Confie em mim. Estou do seu lado. Encontre-me na antiga fábrica ao norte."</p>
+        <p>Júlia ponderou a decisão. "Pode ser uma armadilha, mas também pode ser nossa única chance de virar o jogo."</p>
+        <p>Com o plano em movimento, a equipe sabia que estava se preparando para a batalha final. A traição nas sombras poderia ser a chave para a vitória, ou o golpe fatal que destruiria tudo o que haviam construído.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo35.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo37.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 37</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo37" -->
+    <div class="container capitulo" id="capitulo37">
+        <h1 class="chapter-number">Capítulo 37</h1>
+        <h2 class="chapter-title">Conspiração Global</h2>
+        <p>O ar na antiga fábrica estava pesado com o cheiro de óleo velho e ferrugem. Júlia olhou ao redor enquanto os sons de passos ecoavam nas paredes. "Tem certeza de que é seguro?", perguntou a Pedro, com a voz carregada de tensão.</p>
+        <p>"Não, mas não temos escolha", respondeu ele, segurando firme o celular com a mensagem anônima. "Se essa pessoa estiver dizendo a verdade, podemos estar diante de uma virada."</p>
+        <p>A porta de metal rangeu quando foi empurrada, e uma figura encapuzada entrou. Júlia imediatamente levantou a arma. "Pare aí mesmo!"</p>
+        <p>"Calma, estou aqui para ajudar", disse a figura, levantando as mãos. Ao baixar o capuz, revelou-se uma mulher de aparência séria, com cicatrizes que indicavam um passado de lutas. "Meu nome é Mariana. Eu era uma operativa do grupo conspiratório até perceber o que realmente estão planejando."</p>
+        <p>"Prove isso", disse Miguel, estreitando os olhos. "Se está mentindo, essa será sua última conversa."</p>
+        <p>Mariana jogou um pendrive no chão e deu um passo atrás. "Isso contém os detalhes da 'Operação Voz do Mundo'. Eles não querem apenas dominar as redes de comunicação. Eles querem silenciar permanentemente qualquer voz de oposição em escala global."</p>
+        <p>Júlia pegou o pendrive, mas hesitou. "Por que você está aqui? Por que agora?"</p>
+        <p>"Porque eles me traíram também", respondeu Mariana, com os olhos fixos no chão. "Eu fui usada como uma peça descartável, mas tenho informações que podem destruir o centro de comando deles."</p>
+        <p>Pedro conectou o pendrive ao laptop e analisou os dados rapidamente. "Isso é... monumental. Localizações, códigos de acesso, contatos internacionais... Isso pode expor a operação inteira."</p>
+        <p>Júlia sentiu um frio na espinha. "Mas também confirma que eles têm apoio dentro do governo. Precisamos identificar quem está ajudando eles."</p>
+        <p>Mariana cruzou os braços. "Eu posso levar vocês até o centro de comando, mas o resto é com vocês. Se falharmos, não haverá uma segunda chance."</p>
+        <p>Miguel olhou para Júlia. "Isso é loucura. Mas se tivermos uma chance de acabar com isso, é agora."</p>
+        <p>Júlia respirou fundo e olhou para sua equipe. "Estamos nisso juntos. Se isso significa arriscar tudo, que seja. Chegamos longe demais para recuar agora."</p>
+        <p>O grupo começou a traçar o plano para invadir o centro de comando. O risco era enorme, mas a recompensa era maior: a queda definitiva do grupo conspiratório.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo36.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo38.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

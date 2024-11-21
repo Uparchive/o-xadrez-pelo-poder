@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 34</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo34" -->
+    <div class="container capitulo" id="capitulo34">
+        <h1 class="chapter-number">Capítulo 34</h1>
+        <h2 class="chapter-title">O Cerco Final</h2>
+        <p>O som da explosão ainda ecoava pelo prédio enquanto Júlia corria pelo corredor. "Pedro, a transmissão está ativa?", gritou ela, olhando para trás enquanto Rafael e Miguel protegiam a entrada.</p>
+        <p>"Está quase!", respondeu Pedro, com os dedos voando sobre o teclado. "Preciso de mais alguns segundos para configurar os servidores redundantes."</p>
+        <p>"Você não tem alguns segundos!", gritou Rafael, disparando contra os invasores que já avançavam pelo corredor. "Eles estão entrando com tudo!"</p>
+        <p>Júlia segurava a mochila com os últimos arquivos restantes, suas mãos tremendo de adrenalina. "Miguel, proteja Pedro. Rafael, vem comigo, precisamos ganhar tempo!"</p>
+        <p>Miguel acenou, se posicionando na frente de Pedro, enquanto Júlia e Rafael se moviam para conter os inimigos. Os tiros ecoavam pelo prédio, e o cheiro de pólvora preenchia o ar. "Eles estão se multiplicando!", gritou Rafael. "Puta merda, isso está saindo do controle!"</p>
+        <p>Júlia olhou para ele, ofegante. "Não podemos perder isso agora. Se eles interromperem a transmissão, tudo o que passamos será em vão."</p>
+        <p>No andar inferior, os invasores usavam explosivos para abrir portas e criar rotas rápidas. "Não deixem que eles subam!", gritou Júlia para os poucos jornalistas independentes que ainda estavam no prédio. "Qualquer segundo que ganharmos faz diferença!"</p>
+        <p>De volta à sala de transmissão, Pedro finalmente levantou a cabeça. "Está no ar! A transmissão está ao vivo! Os arquivos estão sendo enviados para os maiores veículos internacionais."</p>
+        <p>Miguel sorriu, mas sua expressão rapidamente mudou ao ouvir o som de passos pesados no corredor. "Eles estão aqui...", murmurou, levantando a arma com mãos trêmulas.</p>
+        <p>Júlia e Rafael chegaram a tempo de ver os invasores tentando arrombar a porta da sala de transmissão. "Vocês não vão passar!", gritou Rafael, atirando contra eles com tudo o que tinha. Júlia correu para ajudar, mas a força dos inimigos era esmagadora.</p>
+        <p>De repente, um som estrondoso ecoou. Mais uma explosão sacudiu o prédio, e a estrutura começou a ceder. "O prédio não vai aguentar muito tempo!", gritou Miguel, puxando Pedro pela jaqueta. "Precisamos sair daqui agora!"</p>
+        <p>Júlia olhou para os outros, mas não conseguia abandonar o posto. "Eu não saio até ter certeza de que tudo foi enviado!", gritou ela, seus olhos ardendo de determinação.</p>
+        <p>Pedro verificou rapidamente a tela. "Está quase completo... mais dez segundos!"</p>
+        <p>Os invasores estavam a poucos metros, e Rafael segurava a linha de defesa sozinho. "Júlia, vá embora!", gritou ele. "Vocês precisam sobreviver para terminar isso!"</p>
+        <p>Mas antes que pudesse reagir, um tiro atingiu Rafael no ombro, e ele caiu no chão com um grito de dor. "Rafael!", gritou Júlia, correndo para ajudá-lo.</p>
+        <p>Pedro, com a transmissão concluída, se levantou. "Está feito! O mundo inteiro está vendo agora!"</p>
+        <p>Júlia segurou Rafael, tentando levantá-lo. "Vamos sair daqui!", disse ela, seus olhos se enchendo de lágrimas. "Não vou perder mais ninguém!"</p>
+        <p>Com o prédio em colapso e os invasores ainda avançando, o grupo sabia que estava em um limite perigoso. Mas Júlia, com os arquivos finalmente expostos ao público, sentiu uma centelha de esperança no meio do caos.</p>
+        <p>Enquanto corriam para a saída, o som das sirenes ecoava ao longe. A verdade estava finalmente livre, mas o custo foi alto, e o grupo sabia que o sacrifício de todos não seria em vão.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo33.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo35.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

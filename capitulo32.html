@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 32</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo32" -->
+    <div class="container capitulo" id="capitulo32">
+        <h1 class="chapter-number">Capítulo 32</h1>
+        <h2 class="chapter-title">O Contra-Ataque</h2>
+        <p>O carro avançava pelas estradas desertas enquanto o céu começava a escurecer novamente. Júlia dirigia com determinação, enquanto os outros permaneciam em silêncio, revisando mentalmente os próximos passos. "Miguel, esse centro que você mencionou... como chegamos lá sem sermos detectados?", perguntou Júlia, quebrando o silêncio.</p>
+        <p>"Há uma entrada lateral nos túneis de manutenção do prédio", explicou Miguel, ainda recuperando o fôlego. "Mas é altamente vigiado. Eles sabem que estão em risco."</p>
+        <p>Pedro, no banco traseiro, analisava os dados que ainda tinham em mãos. "Se conseguirmos acesso ao centro, podemos interromper a operação de isolamento das comunicações. Mas precisamos agir rápido. Eles estão prestes a lançar o próximo ataque."</p>
+        <p>"E se estivermos caminhando direto para uma emboscada?", questionou Rafael, sem esconder a preocupação. "Eles sabem que estamos desesperados e podem usar isso contra nós."</p>
+        <p>Júlia olhou para ele pelo retrovisor. "Estamos sempre em desvantagem, Rafael. Mas a diferença agora é que temos a verdade ao nosso lado. E é isso que vai derrubá-los."</p>
+        <p>Ao chegarem ao local, um prédio aparentemente abandonado no centro industrial da cidade, o grupo se preparou. Pedro ajustou o laptop para se conectar remotamente aos sistemas, enquanto Miguel apontava a entrada do túnel. "É aqui. Mas precisamos ser rápidos."</p>
+        <p>O túnel era estreito e escuro, com apenas a luz das lanternas iluminando o caminho. Júlia liderava, com Rafael cobrindo a retaguarda. O silêncio era interrompido apenas pelo som de passos e pela respiração pesada de todos.</p>
+        <p>De repente, Miguel parou. "Temos companhia", sussurrou ele, apontando para a luz fraca à frente. Vozes podiam ser ouvidas, e o som de armas sendo carregadas fez o coração de Júlia disparar.</p>
+        <p>"Merda", murmurou Rafael. "Eles sabiam que estávamos vindo."</p>
+        <p>Júlia fez sinal para que todos parassem. "Pedro, conseguimos acessar algo remotamente daqui?"</p>
+        <p>"Ainda não", respondeu ele, nervoso. "Preciso de mais tempo e de um ponto de acesso mais próximo."</p>
+        <p>"Então teremos que abrir caminho", disse Rafael, segurando a arma com firmeza. "Não temos escolha."</p>
+        <p>A emboscada foi rápida e brutal. Júlia e Rafael avançaram com precisão, enquanto Miguel ajudava Pedro a encontrar uma entrada segura para conectar o laptop. Os tiros ecoavam pelo túnel, e o cheiro de pólvora enchia o ar.</p>
+        <p>"Consegui!", gritou Pedro, conectando-se finalmente ao sistema do prédio. "Estou dentro! Mas preciso de proteção!"</p>
+        <p>Júlia e Rafael se posicionaram para cobrir Pedro, enquanto ele trabalhava freneticamente para desativar os bloqueios de comunicação. "Só mais alguns segundos!", gritou ele.</p>
+        <p>De repente, um som ensurdecedor tomou conta do túnel. Uma explosão fez o chão tremer, e a equipe foi jogada ao chão. Quando a poeira começou a assentar, Júlia se levantou, cambaleando. "Todo mundo está bem?"</p>
+        <p>"Acho que sim", respondeu Rafael, ajudando Miguel a se levantar. "Mas precisamos sair daqui. Agora."</p>
+        <p>Pedro, com o rosto coberto de poeira, sorriu. "Consegui. A rede deles está comprometida. A operação foi interrompida."</p>
+        <p>Júlia olhou para ele, aliviada, mas ainda tensa. "Isso vai atrasá-los, mas não vai pará-los. Precisamos continuar."</p>
+        <p>Enquanto saíam do túnel, Júlia sabia que a luta estava longe de acabar. O grupo conspiratório ainda tinha recursos e influência, mas cada vitória, por menor que fosse, os aproximava do fim. E agora, mais do que nunca, eles estavam prontos para lutar até o último momento.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo31.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo33.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

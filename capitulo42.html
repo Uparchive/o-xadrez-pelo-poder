@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 42</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo42" -->
+    <div class="container capitulo" id="capitulo42">
+        <h1 class="chapter-number">Capítulo 42</h1>
+        <h2 class="chapter-title">A Queda do Império</h2>
+        <p>O céu estava tingido de vermelho com os primeiros raios do amanhecer enquanto a equipe se afastava da instalação destruída. Cada passo era carregado de dor e exaustão, mas também de uma pequena centelha de esperança. "Eles perderam o controle", disse Pedro, olhando para as atualizações no laptop. "O sistema deles está completamente exposto. O mundo está vendo tudo."</p>
+        <p>"Mas a que custo?", murmurou Júlia, ajustando o braço de Rafael em seu ombro. Ele estava pálido e quase inconsciente, mas ainda segurava a mão dela. "Nós não terminamos isso ainda."</p>
+        <p>Enquanto caminhavam, Júlia recebeu uma mensagem anônima em seu dispositivo. Era um vídeo ao vivo do líder conspiratório em um local desconhecido. "Vocês acham que venceram?", dizia ele, com a voz carregada de desdém. "A verdade não importa sem ordem. O caos que vocês começaram será a ruína de todos."</p>
+        <p>"Filho da puta", murmurou Júlia, apertando o dispositivo com força. "Ele ainda está tentando manipular tudo."</p>
+        <p>Mariana havia dado sua vida para desativar o sistema central, mas o núcleo da liderança do grupo ainda estava intacto. "Eles ainda têm aliados no governo, nas corporações. Precisamos terminar isso agora", disse Miguel, sua voz séria.</p>
+        <p>Pedro concordou, digitando rapidamente. "Eu consigo rastrear a localização do vídeo. Mas vai levar alguns minutos."</p>
+        <p>Enquanto aguardavam, Rafael abriu os olhos, sua voz fraca mas resoluta. "Júlia... faça valer a pena."</p>
+        <p>Com os olhos cheios de lágrimas, Júlia segurou a mão dele. "Você não vai se sacrificar por nada, Rafael. Eu prometo."</p>
+        <p>Quando Pedro finalmente conseguiu rastrear a localização, a equipe se preparou para o confronto final. Era um prédio isolado em uma área industrial. Sem tempo para planos elaborados, eles decidiram agir imediatamente.</p>
+        <p>Ao chegarem, encontraram resistência, mas com as forças do grupo conspiratório desorganizadas, a equipe conseguiu avançar rapidamente. Cada passo era uma luta, mas Júlia liderava com uma determinação inabalável.</p>
+        <p>No topo do prédio, encontraram o líder, cercado por monitores que mostravam imagens do caos que ele havia ajudado a criar. "Bem-vindos ao fim", disse ele, com um sorriso frio. "Vocês destruíram a ordem. Agora o mundo verá o verdadeiro preço da liberdade."</p>
+        <p>Júlia levantou sua arma. "A liberdade sempre vale o preço. E pessoas como você nunca entenderão isso."</p>
+        <p>Em uma troca rápida e tensa, Júlia e o líder se enfrentaram. Pedro conseguiu acessar os monitores e interromper as transmissões finais do líder, substituindo-as por mensagens expondo a verdade sobre a conspiração.</p>
+        <p>Quando o confronto terminou, o líder caiu ao chão, derrotado. Júlia, respirando pesadamente, olhou para ele. "Isso é pelo mundo que você tentou destruir."</p>
+        <p>Com o fim do grupo conspiratório, a equipe saiu do prédio, exausta mas vitoriosa. O sol finalmente iluminava o céu, sinalizando um novo começo. O preço havia sido alto, mas o mundo agora tinha uma chance de reconstruir, de recuperar a liberdade.</p>
+        <p>Júlia olhou para o horizonte e sussurrou: "Por Mariana, por Lucas, por Miguel. Isso foi por vocês."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo41.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo43.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

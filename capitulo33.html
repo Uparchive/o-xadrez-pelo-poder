@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 33</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo33" -->
+    <div class="container capitulo" id="capitulo33">
+        <h1 class="chapter-number">Capítulo 33</h1>
+        <h2 class="chapter-title">A Verdade Sob Pressão</h2>
+        <p>A noite parecia ainda mais escura quando a equipe emergiu do túnel. O ar fresco trouxe um breve alívio, mas Júlia sabia que o tempo estava se esgotando. "Rafael, temos tudo o que precisamos para seguir em frente?"</p>
+        <p>"Sim, mas o sistema deles ainda não está totalmente fora do ar", respondeu Rafael, enquanto checava as informações no tablet. "Pedro comprometeu boa parte da rede deles, mas eles têm backups. Não vai demorar para que reajam."</p>
+        <p>"Então precisamos agir antes disso", disse Júlia com firmeza. "Não podemos dar a eles tempo para se reorganizar."</p>
+        <p>Pedro, ainda tentando recuperar o fôlego após a explosão, levantou a cabeça. "A próxima fase precisa ser pública. Eles já sabem que estamos aqui, então não há mais como operar nas sombras. Precisamos de um lugar seguro para transmitir."</p>
+        <p>Miguel, que estava encostado em uma parede próxima, limpou o suor da testa. "Eu conheço um lugar, mas é arriscado. É um edifício antigo usado como refúgio por jornalistas independentes. Se chegarmos lá, eles podem nos ajudar a transmitir."</p>
+        <p>Júlia ponderou por um momento. "Se é nossa melhor opção, então vamos fazer isso. Mas precisamos ser rápidos."</p>
+        <p>O grupo seguiu em direção ao refúgio indicado por Miguel. Durante o trajeto, o silêncio foi interrompido apenas pelo som dos pneus no asfalto e pelo pensamento coletivo sobre os riscos que estavam assumindo.</p>
+        <p>Chegando ao prédio, a equipe foi recebida com olhares desconfiados. "Quem são vocês?", perguntou um dos jornalistas, com uma câmera pendurada no ombro.</p>
+        <p>"Somos a última linha de defesa contra a conspiração que está tentando destruir o país", respondeu Júlia, entregando um pen drive com os dados coletados. "Se vocês puderem nos ajudar, podemos expor a verdade."</p>
+        <p>O jornalista olhou para o pen drive por um momento antes de assentir. "Sigam-me."</p>
+        <p>No andar superior, a equipe começou a preparar a transmissão. Pedro ajustava os equipamentos enquanto Rafael verificava as provas uma última vez. "Isso vai ser o suficiente para derrubá-los?", perguntou Miguel.</p>
+        <p>Júlia, sentada ao lado de um monitor, respondeu: "Vai ser o começo. Depois disso, o povo precisa fazer a sua parte."</p>
+        <p>De repente, uma explosão abalou o prédio. As luzes piscaram e gritos ecoaram pelo corredor. "Eles nos acharam!", gritou Rafael.</p>
+        <p>Júlia pegou o pen drive e entregou a Pedro. "Continue transmitindo, não importa o que aconteça."</p>
+        <p>Com os invasores se aproximando, a equipe sabia que estavam enfrentando sua maior prova até agora. A verdade estava à beira de ser revelada, mas o preço seria alto.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo32.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo34.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 35</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo35" -->
+    <div class="container capitulo" id="capitulo35">
+        <h1 class="chapter-number">Capítulo 35</h1>
+        <h2 class="chapter-title">O Peso da Verdade</h2>
+        <p>As sirenes das viaturas ecoavam pela cidade enquanto o grupo corria para escapar do prédio que ameaçava desabar. Júlia segurava Rafael com firmeza, ignorando o sangue que escorria de seu ombro ferido. "Aguenta firme, Rafael. Estamos quase lá!"</p>
+        <p>Miguel liderava o caminho, guiando-os por um beco que levava a um veículo previamente escondido. "Entrem, rápido!", gritou ele, enquanto Pedro ajudava Rafael a entrar no banco traseiro.</p>
+        <p>O motor rugiu, e o carro arrancou em alta velocidade, deixando para trás a fumaça e o caos. Júlia olhou pelo retrovisor, vendo as luzes das viaturas e os gritos dos invasores desaparecendo na distância. "Conseguimos... por enquanto."</p>
+        <p>No banco de trás, Pedro tentava estancar o sangramento de Rafael. "Você vai ficar bem", disse ele, mais para si mesmo do que para Rafael. "Só precisamos encontrar um médico."</p>
+        <p>"Esqueça isso", murmurou Rafael, com a voz fraca. "O importante é que a transmissão foi ao ar. Eles não podem mais esconder a verdade."</p>
+        <p>O carro finalmente parou em um galpão abandonado na periferia da cidade. Miguel ajudou Rafael a sair enquanto Júlia verificava os equipamentos restantes. "Pedro, os arquivos estão seguros? Há alguma reação online?"</p>
+        <p>"Os dados estão intactos", respondeu Pedro, digitando freneticamente em seu laptop. "As redes estão explodindo. Hashtags como #VerdadeRevelada e #FimDaConspiração estão nos trending topics. Mas eles estão tentando reagir com mais desinformação."</p>
+        <p>Júlia respirou fundo, tentando ignorar a exaustão que ameaçava dominá-la. "Então precisamos fazer mais. Esse é só o começo."</p>
+        <p>Enquanto isso, no quartel-general do grupo conspiratório, o líder assistia às notícias com um olhar frio. "Eles acham que venceram", disse ele a seus subordinados. "Mas ainda temos cartas na manga. Preparem o próximo movimento."</p>
+        <p>De volta ao galpão, Miguel levantou-se após verificar o estado de Rafael. "Precisamos nos dividir. Eles vão nos rastrear, e não podemos ser encontrados juntos."</p>
+        <p>Júlia hesitou, mas sabia que ele estava certo. "Pedro, continue monitorando a repercussão online. Rafael precisa de cuidados médicos, e Miguel vai providenciar isso. Eu vou para o próximo ponto e coordenar nossa próxima ação."</p>
+        <p>"Você vai ficar sozinha?", perguntou Pedro, preocupado. "Isso é muito perigoso."</p>
+        <p>"Não mais do que tudo o que já enfrentamos", respondeu Júlia com um pequeno sorriso. "E não temos tempo para hesitar."</p>
+        <p>Enquanto o grupo se preparava para se dispersar, Júlia olhou para Rafael e Pedro. "Nós perdemos muito, mas ainda estamos aqui. Lucas e todos os outros que sacrificaram suas vidas... eles acreditaram na gente. E não podemos deixá-los para trás."</p>
+        <p>A verdade estava nas mãos do público agora, mas Júlia sabia que o grupo conspiratório não cairia sem lutar. "Isso ainda não acabou", disse ela, apertando a alça da mochila. "Mas estamos mais perto do que nunca."</p>
+        <p>O motor do carro rugiu novamente, levando-os para destinos separados. Cada um sabia que o próximo movimento poderia ser o último, mas estavam determinados a ver a justiça prevalecer, custasse o que custasse.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo34.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo36.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

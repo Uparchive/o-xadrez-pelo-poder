@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 45</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo45" -->
+    <div class="container capitulo" id="capitulo45">
+        <h1 class="chapter-number">Capítulo 45</h1>
+        <h2 class="chapter-title">O Fim e o Novo Começo</h2>
+        <p>As notícias começaram a se espalhar como fogo. O cerco final ao grupo conspiratório havia culminado na prisão de seus principais líderes. Helicópteros sobrevoavam a cidade enquanto viaturas policiais cercavam as mansões e escritórios onde os mandantes do esquema se escondiam.</p>
+        <p>Júlia assistia à transmissão ao vivo em um pequeno aparelho de televisão no esconderijo improvisado. Imagens mostravam homens e mulheres sendo escoltados em algemas por agentes da Polícia Federal. Cada rosto carregava a marca da arrogância desafiada.</p>
+        <p>"Entre os presos estão Carlos Bezerra e Augusto Soares, apontados como mentores intelectuais do grupo conspiratório", dizia o âncora do noticiário. "A operação, que se estende por várias cidades, também resultou na apreensão de documentos, armas e milhões de reais em dinheiro."</p>
+        <p>"Finalmente", murmurou Pedro, sentado ao lado de Júlia. "Esses desgraçados estão onde deveriam estar."</p>
+        <p>Rafael, ainda se recuperando de seu ferimento, sorriu com dificuldade. "Não posso acreditar que conseguimos."</p>
+        <p>O noticiário continuava: "A facção criminosa identificada como o 'Consórcio Silencioso' manipulava contratos públicos, controlava redes de comunicação e coordenava assassinatos para manter seu domínio. As investigações agora apontam para conexões com figuras políticas influentes, incluindo altos membros do governo."</p>
+        <p>Júlia fechou os olhos por um momento, tentando absorver o momento. "Bezerra e Soares caíram, mas sabemos que eles não são os únicos. Existem outros... aqueles que se beneficiaram do silêncio."</p>
+        <p>Pedro concordou. "Sim, e agora eles vão tentar se esconder. Mas a verdade já está exposta. Não será tão fácil para eles."</p>
+        <p>Enquanto os dias se passavam, as consequências das revelações se tornavam mais claras. Protestos tomaram as ruas exigindo justiça para as vítimas do grupo conspiratório. O mundo assistia enquanto os líderes presos eram interrogados e novas conexões sombrias vinham à tona.</p>
+        <p>No entanto, o preço havia sido alto. Júlia sentiu o peso de cada sacrifício. Mariana e Miguel não estavam ali para ver o que haviam conquistado. Rafael, mesmo sobrevivendo, carregava as cicatrizes, físicas e emocionais, da luta.</p>
+        <p>Em uma coletiva de imprensa, o Ministro da Justiça anunciou a continuidade das investigações. "Embora tenhamos capturado figuras importantes, a batalha contra a corrupção e o crime organizado está longe de terminar. Identificamos outras lideranças dentro do governo e do setor privado. Não descansaremos até que todos sejam responsabilizados."</p>
+        <p>Júlia desligou a televisão e olhou para Pedro e Rafael. "Eles estão certos. Ainda há muito o que fazer."</p>
+        <p>"Mas você já fez sua parte", disse Pedro. "Sem você, nada disso teria sido possível."</p>
+        <p>Júlia sorriu levemente, mas não respondeu. Ela sabia que o mundo agora carregava um novo fardo: manter a chama da justiça acesa, mesmo em meio às sombras que ainda restavam.</p>
+        <p>Enquanto caminhava para fora do esconderijo, o céu estava limpo, com um sol brilhante iluminando a cidade que havia sido palco de tantos segredos. Júlia respirou fundo. Pela primeira vez em muito tempo, sentiu que havia esperança.</p>
+        <p>Mas no fundo de sua mente, sabia que a luta não havia terminado. Em algum lugar, outros conspiradores aguardavam o momento certo para se reerguer. E quando isso acontecesse, Júlia estaria pronta.</p>
+        <p>Ela olhou para o horizonte, determinada. "Por Lucas. Por Mariana. Por Miguel. Por todos que ainda acreditam na verdade. Eu não vou desistir."</p>
+        <p>O vento soprou suavemente, trazendo consigo o sussurro de um novo começo, e a promessa de que, enquanto houvesse alguém disposto a lutar, o futuro ainda poderia ser salvo.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo44.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('fim.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

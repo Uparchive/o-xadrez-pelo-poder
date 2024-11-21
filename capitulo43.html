@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 43</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo43" -->
+    <div class="container capitulo" id="capitulo43">
+        <h1 class="chapter-number">Capítulo 43</h1>
+        <h2 class="chapter-title">A Verdade Alcança o Mundo</h2>
+        <p>Os primeiros flashes das notícias começaram a aparecer nos celulares de todo o mundo. "Conspiração Global Exposta!" diziam as manchetes. Redes internacionais e locais compartilhavam a transmissão final de Júlia e sua equipe, revelando documentos, gravações e vídeos que detalhavam os crimes do grupo conspiratório.</p>
+        <p>Pedro, ainda com o laptop nas mãos, suspirou aliviado. "Está feito. Eles não podem mais esconder a verdade."</p>
+        <p>Júlia olhava para a tela com olhos fixos, mas sua expressão era de exaustão. "O mundo agora sabe. Mas isso não significa que eles desistirão."</p>
+        <p>Rafael, ainda se recuperando do ferimento, deu um sorriso fraco. "É uma vitória. Talvez a maior que poderíamos ter alcançado."</p>
+        <p>No entanto, a vitória veio com um preço. Mariana e Miguel haviam se sacrificado, e o grupo conspiratório, mesmo exposto, ainda tinha aliados poderosos em posições de influência. Júlia sabia que nem todos os culpados enfrentariam a justiça imediatamente.</p>
+        <p>Enquanto caminhavam para longe do local do confronto final, Pedro recebeu uma notificação. "Isso não é bom", disse ele, mostrando a tela para Júlia. "Alguns membros do grupo conspiratório já estão tentando reverter a narrativa."</p>
+        <p>"Era de se esperar", respondeu Júlia. "Mas agora temos algo que eles nunca poderão apagar: a verdade está lá fora."</p>
+        <p>Em outro lugar, uma figura sombria assistia às notícias em um escritório luxuoso. Um leve sorriso surgiu em seu rosto enquanto desligava a tela. "Eles acham que venceram", disse ele para si mesmo. "Mas isso é apenas o começo."</p>
+        <p>De volta ao esconderijo temporário, a equipe finalmente teve um momento para respirar. Pedro conectou o laptop a uma transmissão ao vivo e mostrou os rostos de pessoas ao redor do mundo protestando contra os líderes expostos. "Olhem isso", disse ele. "O povo está acordando."</p>
+        <p>Júlia observou as imagens, sentindo uma mistura de alívio e tristeza. Ela se virou para Rafael. "Você acha que fizemos o suficiente?"</p>
+        <p>Rafael deu de ombros, um sorriso cansado no rosto. "Nós fizemos o que era certo. Isso é o suficiente."</p>
+        <p>Mas Júlia sabia que a luta não havia acabado. A exposição do grupo conspiratório era apenas o começo. Os aliados poderosos ainda estavam livres, e o sistema que permitiu a existência do grupo permanecia intacto. Ela olhou para o horizonte, sabendo que decisões difíceis ainda estavam por vir.</p>
+        <p>"Eles podem ter perdido essa batalha", disse ela, "mas a guerra está longe de acabar."</p>
+        <p>O sol estava se pondo novamente, mas desta vez parecia trazer um brilho de esperança. O mundo havia mudado, e Júlia e sua equipe haviam feito isso possível, mesmo que o custo fosse maior do que poderiam ter imaginado.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo42.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo44.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

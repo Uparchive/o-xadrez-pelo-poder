@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 40</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo40" -->
+    <div class="container capitulo" id="capitulo40">
+        <h1 class="chapter-number">Capítulo 40</h1>
+        <h2 class="chapter-title">O Confronto Final</h2>
+        <p>O clima era de tensão palpável enquanto a equipe se preparava para o ato final. O novo esconderijo temporário, um depósito abandonado, era silencioso, exceto pelo som de Pedro digitando no laptop. "Temos o plano traçado, mas não podemos hesitar. Essa é nossa única chance de acabar com eles de uma vez por todas."</p>
+        <p>"E também nossa chance de sermos mortos", disse Rafael, ainda mancando por causa do ferimento no ombro. "Mas, honestamente, eu já aceitei isso."</p>
+        <p>"Eu não", retrucou Júlia, com determinação nos olhos. "Se um de nós não sobreviver, será por algo que valha a pena."</p>
+        <p>O plano era simples e perigoso: infiltrar-se no centro de comando secundário do grupo conspiratório. Eles haviam descoberto que, mesmo após a destruição do prédio principal, o sistema tinha redundâncias espalhadas pelo mundo. Esse centro era a chave para desativar a operação global.</p>
+        <p>Miguel, carregando um colete cheio de explosivos, deu um sorriso amargo. "Alguém precisa criar uma distração, e eu sou o mais qualificado para isso."</p>
+        <p>"Miguel, você não precisa fazer isso", disse Júlia, quase implorando. "Podemos encontrar outra maneira."</p>
+        <p>"Não há outra maneira", respondeu Miguel calmamente. "Eu vivi minha vida inteira fugindo e mentindo. Talvez seja hora de fazer algo que realmente importe."</p>
+        <p>Naquela noite, a equipe se moveu sob o manto da escuridão. O centro de comando estava localizado em uma instalação fortemente vigiada, com sensores e guardas em cada esquina. Mariana liderava a infiltração, usando suas habilidades para desativar silenciosamente os sistemas de segurança.</p>
+        <p>Pedro, com a mochila contendo o equipamento de transmissão, sussurrou: "Estamos dentro, mas o sistema está protegido por um código de múltiplos fatores. Vou precisar de mais tempo do que previmos."</p>
+        <p>Enquanto Pedro trabalhava, Miguel ativou o temporizador nos explosivos. "Isso deve manter eles ocupados", disse ele, antes de desaparecer na escuridão. "Nos vemos do outro lado."</p>
+        <p>O tempo parecia correr mais rápido enquanto os guardas começavam a perceber a presença da equipe. Rafael segurava a linha de frente, apesar da dor evidente em seu corpo. "Venham, seus desgraçados!", gritou ele, disparando contra os inimigos.</p>
+        <p>Quando a contagem regressiva dos explosivos chegou a zero, uma explosão abalou a instalação, causando um caos generalizado. Júlia olhou para trás, com lágrimas nos olhos. "Miguel cumpriu a parte dele."</p>
+        <p>"E eu terminei aqui!", gritou Pedro, desconectando os cabos. "O sistema foi desativado, mas precisamos sair agora!"</p>
+        <p>Com a instalação em colapso, a equipe correu para a saída. A dor das perdas era evidente, mas a missão havia sido cumprida. O grupo conspiratório estava exposto e vulnerável, e o mundo agora tinha a chance de lutar contra a opressão.</p>
+        <p>Enquanto os primeiros raios de sol surgiam no horizonte, Júlia olhou para o céu e sussurrou: "Por vocês, Lucas e Miguel. Isso foi por vocês."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo39.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo41.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

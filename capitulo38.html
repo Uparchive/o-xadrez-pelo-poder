@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 38</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo38" -->
+    <div class="container capitulo" id="capitulo38">
+        <h1 class="chapter-number">Capítulo 38</h1>
+        <h2 class="chapter-title">Ataque ao Centro de Comando</h2>
+        <p>O plano estava traçado. Júlia e sua equipe sabiam que não haveria volta após esse movimento. "Se falharmos, eles vão dominar o mundo digital", disse Mariana, olhando para todos. "Mas se vencermos, podemos desmantelar essa operação para sempre."</p>
+        <p>A noite estava silenciosa enquanto o grupo se aproximava do centro de comando. O prédio ficava em uma zona isolada, rodeado por cercas de segurança e patrulhas armadas. Miguel analisava as câmeras de vigilância em um tablet. "Eles reforçaram a segurança, mas há uma brecha na lateral leste. Podemos entrar por lá."</p>
+        <p>"E o sistema interno?", perguntou Pedro, já preparando seu laptop para a invasão digital. "Preciso acessar o servidor central para desativar as comunicações deles."</p>
+        <p>"Você terá uma janela curta", respondeu Mariana. "Assim que perceberem que estamos lá, eles vão ativar os protocolos de emergência."</p>
+        <p>Júlia verificou sua arma e olhou para a equipe. "Lembrem-se: nosso objetivo é desativar o sistema deles e expor tudo. Se algo der errado, ninguém fica para trás. Entendido?"</p>
+        <p>Todos assentiram, e o grupo se moveu silenciosamente em direção à entrada. Mariana liderava o caminho, desativando os sensores enquanto Miguel cuidava das travas eletrônicas. "Estamos dentro", sussurrou Mariana, abrindo a porta para um corredor escuro e estreito.</p>
+        <p>Pedro imediatamente conectou seu laptop a um terminal. "Vou precisar de cobertura enquanto acesso o sistema."</p>
+        <p>Júlia e Rafael se posicionaram estrategicamente, mantendo os olhos atentos enquanto Pedro digitava freneticamente. "Estou dentro", disse ele. "Mas tem um firewall pesado. Preciso de mais tempo."</p>
+        <p>De repente, o som de passos ecoou pelo corredor. "Eles estão vindo", avisou Rafael, apontando sua arma. "Preparem-se para o confronto."</p>
+        <p>Os invasores chegaram rapidamente, e o tiroteio começou. Júlia e Rafael seguravam a linha de defesa enquanto Mariana cobria Pedro. "Anda logo!", gritou Mariana, enquanto as balas ricocheteavam nas paredes.</p>
+        <p>"Mais alguns segundos!", respondeu Pedro, suando de nervosismo. "Estou desativando o protocolo de emergência."</p>
+        <p>Quando Pedro finalmente levantou os olhos do laptop, ele gritou: "Consegui! As comunicações deles estão fora do ar!"</p>
+        <p>Mas o alívio foi breve. Um alarme ensurdecedor começou a tocar, e uma voz robótica ecoou pelos alto-falantes. "Invasão detectada. Iniciando bloqueio total."</p>
+        <p>"Merda!", gritou Miguel. "Eles ativaram o protocolo de isolamento! Estamos presos aqui."</p>
+        <p>Júlia olhou para Pedro. "Você pode reverter isso?"</p>
+        <p>"Vou tentar, mas preciso acessar outro terminal mais próximo do servidor principal", respondeu ele.</p>
+        <p>O grupo se moveu rapidamente pelo prédio, enfrentando mais segurança a cada passo. O ambiente estava em completo caos, e a tensão aumentava. "Não podemos falhar agora", disse Júlia, com determinação nos olhos. "Estamos muito perto de acabar com isso."</p>
+        <p>Enquanto o grupo avançava, sabiam que estavam enfrentando não apenas os inimigos visíveis, mas também o tempo. Cada segundo contava, e a luta pelo controle do centro de comando estava apenas começando.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo37.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo39.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

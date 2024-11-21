@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 39</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-xadrez-pelo-poder">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo39" -->
+    <div class="container capitulo" id="capitulo39">
+        <h1 class="chapter-number">Capítulo 39</h1>
+        <h2 class="chapter-title">Decisão Final</h2>
+        <p>O alarme incessante fazia o ar vibrar enquanto Júlia e sua equipe corriam pelo corredor em direção ao servidor principal. O tempo parecia escorregar pelos dedos, e cada segundo era precioso. "Pedro, quanto tempo precisamos no próximo terminal?", gritou Júlia enquanto se escondia atrás de uma parede para evitar os tiros dos guardas.</p>
+        <p>"Se tudo der certo, cinco minutos!", respondeu Pedro, com suor escorrendo pelo rosto. "Mas não temos margem para erros."</p>
+        <p>Rafael avançou primeiro, disparando contra os guardas para abrir caminho. "Eu seguro esses desgraçados! Vocês vão em frente!"</p>
+        <p>"Não podemos te deixar para trás!", disse Júlia, com a voz tremendo de emoção.</p>
+        <p>"Eu disse que cuido disso! Vocês têm um mundo inteiro para salvar!", retrucou Rafael, antes de desaparecer em uma chuva de tiros.</p>
+        <p>Pedro encontrou o próximo terminal e começou a trabalhar freneticamente. Mariana mantinha a guarda enquanto Miguel cobria o outro lado do corredor. "Isso é loucura", murmurou Miguel. "Mas, ao mesmo tempo, é a única coisa que faz sentido."</p>
+        <p>"Concentre-se", disse Mariana, com um tom firme. "Eles vão nos alcançar antes que possamos terminar."</p>
+        <p>De repente, a voz robótica ecoou novamente pelos alto-falantes. "Invasores detectados. Ativando sistema de autodestruição em 10 minutos."</p>
+        <p>"Merda!", exclamou Júlia. "Pedro, quanto tempo ainda falta?"</p>
+        <p>"Quase lá, mas preciso de mais tempo!", gritou ele. "Se sairmos agora, o sistema vai reiniciar e todos os nossos progressos serão perdidos."</p>
+        <p>Os guardas estavam se aproximando novamente, e a equipe sabia que o tempo estava se esgotando. Mariana tomou uma decisão rápida. "Eu vou segurá-los. Não importa o que aconteça, terminem o trabalho."</p>
+        <p>Júlia tentou protestar, mas Mariana já estava a caminho. "Vocês precisam disso mais do que eu. Façam valer a pena."</p>
+        <p>Com lágrimas nos olhos, Júlia assentiu e voltou sua atenção para Pedro. "Você tem que terminar isso, Pedro. Custe o que custar."</p>
+        <p>Finalmente, a voz de Pedro ecoou triunfante. "Consegui! Os dados estão sendo transmitidos para os principais veículos internacionais. Não tem mais como eles esconderem isso!"</p>
+        <p>"Então vamos sair daqui!", gritou Miguel, puxando Júlia pelo braço.</p>
+        <p>Enquanto corriam para a saída, o prédio começou a tremer. O sistema de autodestruição estava em contagem regressiva, e as explosões começaram a rasgar a estrutura.</p>
+        <p>Quando finalmente alcançaram a saída, olharam para trás e viram o prédio desmoronar. O silêncio que se seguiu foi esmagador, mas a sensação de missão cumprida era inegável. Júlia respirou fundo e olhou para Miguel e Pedro. "Acabou... mas a que custo?"</p>
+        <p>A equipe sabia que haviam conseguido algo monumental, mas as perdas pesavam como uma sombra sobre a vitória. O mundo agora tinha a verdade, e o sacrifício daqueles que ficaram para trás não seria em vão.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo38.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo40.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>
