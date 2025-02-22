@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Xadrez Pelo Poder - Kell Shalom</title>
-    <link rel="stylesheet" href="capastyle.css">
+    <link rel="stylesheet" href="capastyle.css"> <!-- Importa o CSS -->
+    
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Identifique o livro atual (por exemplo, usando um atributo data no body)
-            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder"; // Exemplo: 'NomeDoSeuLivro'
+        document.addEventListener("DOMContentLoaded", function () {
+            checkPassword(); // Verifica a senha antes de carregar a página
 
-            // Função para obter o nome do armazenamento local com base no livro
+            // Identifica o livro atual
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+
+            // Função para obter o nome do armazenamento local baseado no livro
             function getStorageKey() {
                 return `${currentBook}_lastReadChapter`;
             }
@@ -20,26 +23,57 @@
             const continueButton = document.getElementById("continue-button");
 
             if (lastReadChapter) {
-                // Se houver um último capítulo lido, mostra "Continuar Leitura" e redireciona para o arquivo correto do capítulo
+                // Se houver um último capítulo lido, altera o botão para "Continuar Leitura"
                 continueButton.textContent = "Continuar Leitura";
-                continueButton.href = `${lastReadChapter}.html`; // Redireciona para o arquivo HTML do último capítulo lido
+                continueButton.href = `${lastReadChapter}.html`; // Redireciona para o último capítulo lido
             } else {
-                // Se não houver, mostra "Iniciar Leitura" e redireciona para o Capítulo 1
+                // Se não houver, começa do capítulo 0
                 continueButton.textContent = "Iniciar Leitura";
-                continueButton.href = "capitulo0.html"; // Redireciona para o Capítulo 1
+                continueButton.href = "capitulo0.html";
             }
         });
 
-        // Função para salvar o capítulo atual no localStorage
-        function setLastRead(chapterId) {
-            const currentBook = document.body.dataset.bookId || "defaultBook"; // Exemplo: 'diariodeomega'
-            const storageKey = `${currentBook}_lastReadChapter`;
-            localStorage.setItem(storageKey, chapterId);
+        function checkPassword() {
+            const savedAccess = localStorage.getItem("bookAccess");
+            const lastAccess = localStorage.getItem("lastAccess");
+            const currentTime = new Date().getTime();
+            const hoursPassed = (currentTime - lastAccess) / (1000 * 60 * 60); // Tempo decorrido em horas
+
+            if (savedAccess === "granted" && lastAccess && hoursPassed < 24) {
+                document.getElementById("login-screen").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            }
+        }
+
+        function validatePassword() {
+            const passwordInput = document.getElementById("password-input").value;
+            const correctPassword = "XADREZ2024"; // Defina a senha mestre aqui
+            const errorMessage = document.getElementById("error-message");
+
+            if (passwordInput === correctPassword) {
+                localStorage.setItem("bookAccess", "granted"); // Salva o acesso no navegador
+                localStorage.setItem("lastAccess", new Date().getTime()); // Salva a hora do acesso
+
+                document.getElementById("login-screen").style.display = "none"; // Esconde tela de login
+                document.getElementById("content").style.display = "block"; // Mostra o conteúdo do livro
+            } else {
+                errorMessage.style.display = "block"; // Exibe mensagem de erro
+            }
         }
     </script>
 </head>
 <body data-book-id="o-xadrez-pelo-poder">
-    <div class="container">
+
+    <!-- Tela de login com senha -->
+    <div id="login-screen" class="login-container">
+        <h2>Digite a Senha para Acessar</h2>
+        <input type="password" id="password-input" placeholder="Digite a senha...">
+        <button onclick="validatePassword()">Entrar</button>
+        <p id="error-message" class="error-message" style="display: none;">Senha incorreta!</p>
+    </div>
+
+    <!-- Conteúdo do livro (escondido até a senha correta ser digitada) -->
+    <div id="content" class="container" style="display: none;">
         <a href="indice.html">
             <img src="OXPP-poster.png" alt="Capa do livro O Xadrez Pelo Poder" class="book-cover">
         </a>
@@ -50,5 +84,6 @@
             <a id="continue-button" href="#" class="button">Iniciar Leitura</a>
         </div>
     </div>
+
 </body>
 </html>

@@ -1,13 +1,43 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const pages = document.querySelectorAll('.page');
     let currentPage = 0;
 
-    // Identifique o livro atual (exemplo: usando um atributo data no body)
-    const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder"; // Exemplo: 'NomeDoSeuLivro'
+    // Identifica o livro atual
+    const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
 
-    // Função para obter o nome do armazenamento local com base no livro
+    // Função para obter o nome do armazenamento local baseado no livro
     function getStorageKey() {
         return `${currentBook}_lastReadChapter`;
+    }
+
+    // Verifica a senha antes de carregar a página
+    checkPassword();
+
+    function checkPassword() {
+        const savedAccess = localStorage.getItem("bookAccess");
+        const lastAccess = localStorage.getItem("lastAccess");
+        const currentTime = new Date().getTime();
+        const hoursPassed = (currentTime - lastAccess) / (1000 * 60 * 60); // Tempo decorrido em horas
+
+        // Se a senha já foi digitada e ainda está dentro das 24h, libera o acesso automaticamente
+        if (savedAccess === "granted" && lastAccess && hoursPassed < 24) {
+            document.getElementById("login-screen").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            return; // Sai da função, pois o acesso já está garantido
+        }
+
+        // Se a senha não foi salva ou já passou das 24h, pede novamente
+        const password = prompt("Digite a senha de acesso:");
+
+        if (password === "XADREZ2024") {
+            localStorage.setItem("bookAccess", "granted"); // Salva o acesso no navegador
+            localStorage.setItem("lastAccess", currentTime); // Salva a hora do acesso
+            document.getElementById("login-screen").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        } else {
+            alert("Senha incorreta! Verifique no seu e-mail.");
+            window.location.href = "https://hotmart.com"; // Redireciona para a Hotmart
+        }
     }
 
     // Recupera o último capítulo lido do localStorage
@@ -25,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Atualiza a página atual
     updateCurrentPage();
 
-    // Eventos para os botões de próxima e anterior
+    // Eventos para os botões de próxima e anterior página
     document.querySelectorAll('.next-page').forEach(button => {
         button.addEventListener('click', () => {
             if (currentPage < pages.length - 1) {
@@ -65,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
             pages[currentPage].classList.add('highlight');
         }
 
-        // Atualiza o índice se houver
+        // Atualiza o índice de capítulos
         const indexElement = document.getElementById(`chapter${currentPage + 1}`);
         if (indexElement) {
             document.querySelectorAll('.chapter-list li').forEach(chapter => {
