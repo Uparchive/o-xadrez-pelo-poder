@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Xadrez Pelo Poder - Kell Shalom</title>
-    <link rel="stylesheet" href="style.css"> <!-- Importa o CSS -->
-    <script src="script.js"></script> <!-- Importa o JavaScript -->
+    <link rel="stylesheet" href="capastyle.css">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Verifica o acesso antes de carregar a página
-            checkPassword();
+            // Identifique o livro atual (por exemplo, usando um atributo data no body)
+            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder"; // Exemplo: 'NomeDoSeuLivro'
 
-            // Identifica o livro atual
-            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
-
-            // Função para obter o nome do armazenamento local baseado no livro
+            // Função para obter o nome do armazenamento local com base no livro
             function getStorageKey() {
                 return `${currentBook}_lastReadChapter`;
             }
@@ -24,19 +20,19 @@
             const continueButton = document.getElementById("continue-button");
 
             if (lastReadChapter) {
-                // Se houver um último capítulo lido, altera o botão para "Continuar Leitura"
+                // Se houver um último capítulo lido, mostra "Continuar Leitura" e redireciona para o arquivo correto do capítulo
                 continueButton.textContent = "Continuar Leitura";
-                continueButton.href = `${lastReadChapter}.html`; // Redireciona para o último capítulo lido
+                continueButton.href = `${lastReadChapter}.html`; // Redireciona para o arquivo HTML do último capítulo lido
             } else {
-                // Se não houver, começa do capítulo 0
+                // Se não houver, mostra "Iniciar Leitura" e redireciona para o Capítulo 1
                 continueButton.textContent = "Iniciar Leitura";
-                continueButton.href = "capitulo0.html";
+                continueButton.href = "capitulo0.html"; // Redireciona para o Capítulo 1
             }
         });
 
         // Função para salvar o capítulo atual no localStorage
         function setLastRead(chapterId) {
-            const currentBook = document.body.dataset.bookId || "o-xadrez-pelo-poder";
+            const currentBook = document.body.dataset.bookId || "defaultBook"; // Exemplo: 'diariodeomega'
             const storageKey = `${currentBook}_lastReadChapter`;
             localStorage.setItem(storageKey, chapterId);
         }
