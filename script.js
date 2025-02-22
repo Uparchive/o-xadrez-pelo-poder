@@ -53,6 +53,29 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem(getStorageKey(), chapterIndex);
     }
 
+    function checkPassword() {
+    const savedPassword = localStorage.getItem("bookAccess");
+    const lastAccess = localStorage.getItem("lastAccess");
+    const currentTime = new Date().getTime();
+    const hoursPassed = (currentTime - lastAccess) / (1000 * 60 * 60); // Tempo decorrido em horas
+
+    // Se a senha já foi digitada e ainda está dentro das 24h, libera o acesso automaticamente
+    if (savedPassword === "XADREZ2024" && lastAccess && hoursPassed < 24) {
+        return; // O usuário já tem acesso válido
+    }
+
+    // Se a senha não foi salva ou já passou das 24h, pede novamente
+    const password = prompt("Digite a senha de acesso:");
+
+    if (password === "XADREZ2024") {
+        localStorage.setItem("bookAccess", password); // Salva a senha no navegador
+        localStorage.setItem("lastAccess", currentTime); // Salva a hora do acesso
+    } else {
+        alert("Senha incorreta! Verifique no seu e-mail.");
+        window.location.href = "https://hotmart.com"; // Redireciona para a Hotmart
+    }
+}
+
     // Função para atualizar o destaque no capítulo atual
     function updateCurrentPage() {
         // Remove o destaque de todas as páginas
